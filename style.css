@@ -1,0 +1,3113 @@
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #5c6b80;
+    line-height: 1.7;
+    background: #ffffff;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1180px;
+}
+
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+
+.top-bar {
+    background: #071b35;
+    color: #ffffff;
+    font-size: 14px;
+    padding: 8px 0;
+}
+
+.top-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-bar a {
+    color: #ffffff;
+    margin-left: 20px;
+}
+
+.top-bar i {
+    color: #4d9cff;
+    margin-right: 5px;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+    background: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    padding: 15px 0;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+    color: #102a43 !important;
+}
+
+.logo i {
+    color: #0d6efd;
+    margin-right: 7px;
+}
+
+.navbar .nav-link {
+    color: #1b2d45;
+    font-weight: 600;
+    padding: 10px 12px !important;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: #0d6efd;
+}
+
+
+/* =========================================================
+   PREMIUM BUTTONS
+   Apply Now / Apply for Loan / Submit Enquiry
+========================================================= */
+
+.apply-btn,
+.btn-primary,
+.apply-card button,
+.enquiry-card button {
+    position: relative !important;
+    overflow: hidden !important;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 11px 24px !important;
+
+    background: linear-gradient(135deg,
+            #005bea 0%,
+            #0d6efd 50%,
+            #00b4ff 100%) !important;
+
+    border: none !important;
+    border-radius: 8px !important;
+
+    color: #ffffff !important;
+
+    font-weight: 700 !important;
+
+    box-shadow:
+        0 6px 18px rgba(13, 110, 253, 0.30);
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   BUTTON SHINE
+========================================================= */
+
+.apply-btn::before,
+.btn-primary::before,
+.apply-card button::before,
+.enquiry-card button::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -130%;
+
+    width: 55%;
+    height: 100%;
+
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.75),
+            transparent);
+
+    transform: skewX(-25deg);
+
+    transition: left 0.7s ease;
+
+    pointer-events: none;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   BUTTON HOVER SHINE
+========================================================= */
+
+.apply-btn:hover::before,
+.btn-primary:hover::before,
+.apply-card button:hover::before,
+.enquiry-card button:hover::before {
+
+    left: 140%;
+}
+
+
+/* =========================================================
+   BUTTON HOVER
+========================================================= */
+
+.apply-btn:hover,
+.btn-primary:hover,
+.apply-card button:hover,
+.enquiry-card button:hover {
+
+    transform: translateY(-3px);
+
+    background: linear-gradient(135deg,
+            #0047c7 0%,
+            #0d6efd 50%,
+            #0099ff 100%) !important;
+
+    box-shadow:
+        0 12px 30px rgba(13, 110, 253, 0.45);
+
+    color: #ffffff !important;
+}
+
+
+/* =========================================================
+   BUTTON CLICK
+========================================================= */
+
+.apply-btn:active,
+.btn-primary:active,
+.apply-card button:active,
+.enquiry-card button:active {
+
+    transform: translateY(0) scale(0.96);
+
+    box-shadow:
+        0 5px 15px rgba(13, 110, 253, 0.30);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    min-height: 650px;
+
+    display: flex;
+    align-items: center;
+
+    background:
+        linear-gradient(90deg,
+            rgba(3, 25, 54, 0.96),
+            rgba(3, 47, 98, 0.82)),
+        url("https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1800&q=80");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero h1 {
+    color: #ffffff;
+    font-size: 55px;
+    line-height: 1.15;
+    font-weight: 800;
+    margin-top: 20px;
+}
+
+.hero h1 span {
+    color: #5ca8ff;
+}
+
+.hero p {
+    color: #e4edf7;
+    font-size: 18px;
+    max-width: 650px;
+    margin-top: 20px;
+}
+
+.hero-badge {
+    display: inline-block;
+    padding: 7px 17px;
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    border-radius: 50px;
+
+    color: #ffffff;
+
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.hero-buttons {
+    margin-top: 30px;
+}
+
+.hero-buttons .btn {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+
+/* =========================================================
+   ENQUIRY CARD
+========================================================= */
+
+.enquiry-card {
+    background: #ffffff;
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.20);
+}
+
+.enquiry-card h3 {
+    color: #102a43;
+    font-weight: 700;
+}
+
+.enquiry-card p {
+    color: #66788f;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.enquiry-card label {
+    display: block;
+
+    font-weight: 600;
+
+    color: #253b53;
+
+    margin-bottom: 6px;
+}
+
+.enquiry-card input,
+.enquiry-card select {
+    min-height: 48px;
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.stats-section {
+    padding: 70px 0;
+    background: #ffffff;
+}
+
+.stat-card {
+    text-align: center;
+
+    padding: 30px 20px;
+
+    border-radius: 12px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.08);
+
+    height: 100%;
+}
+
+.stat-card i {
+    font-size: 35px;
+    color: #0d6efd;
+}
+
+.stat-card h3 {
+    color: #102a43;
+
+    font-weight: 800;
+
+    font-size: 30px;
+
+    margin-top: 12px;
+}
+
+.stat-card p {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+.section {
+    padding: 90px 0;
+}
+
+.section-title {
+    text-align: center;
+
+    max-width: 750px;
+
+    margin: 0 auto 50px;
+}
+
+.section-title span,
+.section-label {
+    color: #0d6efd;
+
+    font-weight: 800;
+
+    font-size: 14px;
+
+    letter-spacing: 1px;
+}
+
+.section-title h2 {
+    color: #102a43;
+
+    font-size: 42px;
+
+    font-weight: 800;
+
+    margin-top: 8px;
+}
+
+.section-title p {
+    margin-top: 10px;
+}
+
+
+/* =========================================================
+   LOAN CARDS
+========================================================= */
+
+.loan-card {
+    background: #ffffff;
+
+    padding: 32px;
+
+    border-radius: 14px;
+
+    height: 100%;
+
+    border: 1px solid #e8edf3;
+
+    transition: all 0.3s ease;
+}
+
+.loan-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.10);
+}
+
+.loan-icon {
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #eaf3ff;
+
+    color: #0d6efd;
+
+    border-radius: 12px;
+
+    font-size: 28px;
+
+    margin-bottom: 20px;
+}
+
+.loan-card h3 {
+    color: #102a43;
+    font-weight: 700;
+}
+
+.loan-card a {
+    color: #0d6efd;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-img {
+    width: 100%;
+
+    min-height: 400px;
+
+    object-fit: cover;
+
+    border-radius: 15px;
+}
+
+.about-title {
+    color: #102a43;
+
+    font-size: 42px;
+
+    font-weight: 800;
+
+    margin: 12px 0 20px;
+}
+
+.check-list {
+    list-style: none;
+
+    padding: 0;
+
+    margin: 25px 0;
+}
+
+.check-list li {
+    margin: 12px 0;
+
+    color: #43566d;
+
+    font-weight: 500;
+}
+
+.check-list i {
+    color: #00a86b;
+
+    margin-right: 10px;
+}
+
+
+/* =========================================================
+   STEPS
+========================================================= */
+
+.step-card {
+    text-align: center;
+
+    padding: 30px 20px;
+}
+
+.step-number {
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #0d6efd;
+
+    color: #ffffff;
+
+    border-radius: 50%;
+
+    font-size: 20px;
+
+    font-weight: 800;
+
+    margin: 0 auto 20px;
+}
+
+.step-card h3 {
+    color: #102a43;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   EMI
+========================================================= */
+
+.emi-box {
+    max-width: 900px;
+
+    margin: auto;
+
+    background: #ffffff;
+
+    padding: 35px;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.18),
+        0 5px 20px rgba(13, 110, 253, 0.08);
+}
+
+.emi-box label {
+    display: block;
+
+    color: #102a43;
+
+    font-weight: 700;
+
+    margin-bottom: 7px;
+}
+
+.emi-box input {
+    min-height: 48px;
+}
+
+.emi-result {
+    margin-top: 30px;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+
+    background: #102a43;
+
+    color: #ffffff;
+
+    padding: 25px;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 15px 40px rgba(16, 42, 67, 0.35);
+}
+
+.emi-result span {
+    font-size: 14px;
+
+    color: #eff0f1;
+}
+
+.emi-result h3 {
+    color: #ffffff;
+
+    margin-top: 5px;
+}
+
+
+/* =========================================================
+   INFO CARDS
+========================================================= */
+
+.info-card {
+    background: #ffffff;
+
+    padding: 30px;
+
+    border-radius: 12px;
+
+    text-align: center;
+
+    height: 100%;
+
+    box-shadow:
+        0 7px 25px rgba(0, 0, 0, 0.07);
+}
+
+.info-card i {
+    font-size: 35px;
+
+    color: #0d6efd;
+
+    margin-bottom: 18px;
+}
+
+.info-card h3 {
+    color: #102a43;
+}
+
+
+/* =========================================================
+   DOCUMENT CARDS
+========================================================= */
+
+.document-card {
+    padding: 35px;
+
+    border: 1px solid #e5ebf2;
+
+    border-radius: 12px;
+
+    text-align: center;
+
+    height: 100%;
+}
+
+.document-card i {
+    color: #0d6efd;
+
+    font-size: 40px;
+
+    margin-bottom: 18px;
+}
+
+.document-card h3 {
+    color: #102a43;
+}
+
+
+/* =========================================================
+   APPLY SECTION
+========================================================= */
+
+.apply-section {
+    padding: 90px 0;
+
+    background:
+        linear-gradient(90deg,
+            rgba(8, 45, 92, 0.96),
+            rgba(13, 110, 253, 0.85));
+}
+
+.apply-card {
+    background: #ffffff;
+
+    padding: 45px;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.20);
+}
+
+.apply-card .section-title {
+    margin-bottom: 30px;
+}
+
+.apply-card label {
+    display: block;
+
+    color: #102a43;
+
+    font-weight: 700;
+
+    margin-bottom: 7px;
+}
+
+.apply-card input,
+.apply-card select,
+.apply-card textarea {
+    min-height: 48px;
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact-card {
+    text-align: center;
+
+    padding: 35px;
+
+    border: 1px solid #e5ebf2;
+
+    border-radius: 12px;
+
+    height: 100%;
+}
+
+.contact-card i {
+    font-size: 35px;
+
+    color: #0d6efd;
+}
+
+.contact-card h3 {
+    color: #102a43;
+
+    margin-top: 15px;
+}
+
+.contact-card a {
+    color: #0d6efd;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    background: #071b35;
+
+    color: #b9c7d8;
+
+    padding: 70px 0 20px;
+}
+
+.footer-logo {
+    color: #ffffff;
+
+    font-weight: 800;
+
+    margin-bottom: 20px;
+}
+
+.footer-logo i {
+    color: #0d6efd;
+}
+
+footer h4 {
+    color: #ffffff;
+
+    margin-bottom: 20px;
+}
+
+footer a {
+    display: block;
+
+    color: #b9c7d8;
+
+    margin-bottom: 9px;
+}
+
+footer a:hover {
+    color: #ffffff;
+}
+
+footer hr {
+    border-color: rgba(255, 255, 255, 0.15);
+
+    margin-top: 40px;
+}
+
+.social-links {
+    display: flex;
+
+    gap: 15px;
+}
+
+.social-links a {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+
+    background: rgba(255, 255, 255, 0.1);
+
+    border-radius: 50%;
+
+    color: #ffffff;
+
+    margin-bottom: 0;
+}
+
+.social-links a:hover {
+    background: #0d6efd;
+}
+
+.copyright {
+    text-align: center;
+
+    color: #8496aa;
+}
+
+
+/* =========================================================
+   FLOATING WHATSAPP + INSTAGRAM
+========================================================= */
+
+#floating-whatsapp,
+#floating-instagram {
+    position: fixed !important;
+
+    right: 22px !important;
+
+    width: 58px !important;
+    height: 58px !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    border-radius: 50% !important;
+
+    color: #ffffff !important;
+
+    font-size: 29px !important;
+
+    z-index: 99999 !important;
+
+    text-decoration: none !important;
+
+    box-shadow:
+        0 5px 18px rgba(0, 0, 0, 0.25) !important;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease !important;
+}
+
+
+/* WhatsApp */
+
+#floating-whatsapp {
+    bottom: 22px !important;
+
+    background: #25d366 !important;
+}
+
+
+/* Instagram */
+
+#floating-instagram {
+    bottom: 92px !important;
+
+    background: linear-gradient(45deg,
+            #feda75,
+            #fa7e1e,
+            #d62976,
+            #962fbf,
+            #4f5bd5) !important;
+}
+
+
+/* Floating Icons */
+
+#floating-whatsapp i,
+#floating-instagram i {
+    color: #ffffff !important;
+
+    display: block !important;
+}
+
+
+/* Floating Hover */
+
+#floating-whatsapp:hover,
+#floating-instagram:hover {
+    color: #ffffff !important;
+
+    transform: scale(1.10) !important;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.35) !important;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+
+    .top-bar {
+        display: none;
+    }
+
+    .navbar {
+        padding: 12px 15px;
+    }
+
+    .navbar-brand.logo {
+        font-size: 21px;
+    }
+
+    .navbar-collapse {
+        background: #ffffff;
+
+        margin-top: 12px;
+
+        padding: 10px 0 15px;
+
+        border-radius: 10px;
+
+        box-shadow:
+            0 8px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    .navbar-nav {
+        align-items: stretch !important;
+    }
+
+    .navbar .nav-link {
+        padding: 11px 15px !important;
+    }
+
+    .hero {
+        min-height: auto;
+
+        padding: 70px 15px;
+    }
+
+    .hero h1 {
+        font-size: 44px;
+
+        line-height: 1.2;
+    }
+
+    .hero p {
+        font-size: 17px;
+
+        max-width: 100%;
+    }
+
+    .section {
+        padding: 70px 15px;
+    }
+
+    .stats-section {
+        padding: 50px 15px;
+    }
+
+    .section-title h2 {
+        font-size: 36px;
+    }
+
+    .about-title {
+        font-size: 36px;
+    }
+
+    .about-img {
+        min-height: 320px;
+    }
+
+    footer {
+        padding: 55px 15px 20px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+    .container {
+        width: 100%;
+
+        max-width: 100%;
+
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .navbar {
+        padding: 10px 0;
+    }
+
+    .navbar-brand.logo {
+        font-size: 19px;
+
+        white-space: nowrap;
+    }
+
+    .navbar-toggler {
+        padding: 6px 9px;
+
+        border-radius: 7px;
+    }
+
+    .navbar-collapse {
+        margin-top: 10px;
+    }
+
+
+    /* Hero */
+
+    .hero {
+        padding: 55px 0 60px;
+
+        text-align: left;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+
+        line-height: 1.18;
+
+        margin-top: 15px;
+    }
+
+    .hero p {
+        font-size: 15.5px;
+
+        line-height: 1.6;
+
+        margin-top: 15px;
+    }
+
+    .hero-badge {
+        font-size: 13px;
+
+        padding: 6px 13px;
+    }
+
+    .hero-buttons {
+        margin-top: 22px;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+
+        margin: 0 0 10px 0;
+
+        padding: 11px 15px;
+    }
+
+
+    /* Enquiry */
+
+    .enquiry-card {
+        padding: 22px 18px;
+
+        border-radius: 13px;
+
+        margin-top: 25px;
+    }
+
+    .enquiry-card h3 {
+        font-size: 23px;
+    }
+
+    .enquiry-card p {
+        font-size: 15px;
+
+        line-height: 1.6;
+
+        margin-top: 8px;
+
+        margin-bottom: 22px;
+    }
+
+    .enquiry-card input,
+    .enquiry-card select {
+        min-height: 47px;
+
+        font-size: 15px;
+    }
+
+
+    /* Stats */
+
+    .stats-section {
+        padding: 40px 15px;
+    }
+
+    .stat-card {
+        padding: 25px 15px;
+    }
+
+    .stat-card i {
+        font-size: 30px;
+    }
+
+    .stat-card h3 {
+        font-size: 25px;
+    }
+
+
+    /* Sections */
+
+    .section {
+        padding: 55px 15px;
+    }
+
+    .section-title {
+        margin-bottom: 35px;
+    }
+
+    .section-title span,
+    .section-label {
+        font-size: 12px;
+    }
+
+    .section-title h2 {
+        font-size: 29px;
+
+        line-height: 1.25;
+    }
+
+    .section-title p {
+        font-size: 15px;
+    }
+
+
+    /* Loan Cards */
+
+    .loan-card {
+        padding: 25px 22px;
+    }
+
+    .loan-icon {
+        width: 58px;
+        height: 58px;
+
+        font-size: 24px;
+
+        margin-bottom: 16px;
+    }
+
+    .loan-card h3 {
+        font-size: 21px;
+    }
+
+    .loan-card p {
+        font-size: 15px;
+    }
+
+
+    /* About */
+
+    .about-img {
+        min-height: 250px;
+
+        max-height: 320px;
+
+        border-radius: 12px;
+    }
+
+    .about-title {
+        font-size: 29px;
+
+        line-height: 1.25;
+    }
+
+    .check-list {
+        margin: 20px 0;
+    }
+
+    .check-list li {
+        font-size: 15px;
+
+        margin: 10px 0;
+    }
+
+
+    /* Steps */
+
+    .step-card {
+        padding: 20px 15px;
+    }
+
+    .step-number {
+        width: 58px;
+        height: 58px;
+
+        font-size: 18px;
+
+        margin-bottom: 15px;
+    }
+
+    .step-card h3 {
+        font-size: 21px;
+    }
+
+
+    /* EMI */
+
+    .emi-box {
+        padding: 22px 18px;
+
+        border-radius: 13px;
+
+        box-shadow:
+            0 18px 45px rgba(0, 0, 0, 0.18);
+    }
+
+    .emi-box label {
+        font-size: 15px;
+    }
+
+    .emi-box input {
+        min-height: 47px;
+    }
+
+    .emi-box button {
+        width: 100%;
+    }
+
+    .emi-result {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+
+        padding: 20px;
+
+        text-align: center;
+    }
+
+    .emi-result h3 {
+        font-size: 22px;
+    }
+
+
+    /* Info */
+
+    .info-card {
+        padding: 25px 18px;
+    }
+
+    .info-card i {
+        font-size: 32px;
+    }
+
+    .info-card h3 {
+        font-size: 21px;
+    }
+
+    .info-card p {
+        font-size: 14px;
+    }
+
+
+    /* Documents */
+
+    .document-card {
+        padding: 28px 18px;
+    }
+
+    .document-card i {
+        font-size: 35px;
+    }
+
+    .document-card h3 {
+        font-size: 21px;
+    }
+
+    .document-card p {
+        font-size: 14px;
+    }
+
+
+    /* Apply */
+
+    .apply-section {
+        padding: 55px 15px;
+    }
+
+    .apply-card {
+        padding: 25px 18px;
+
+        border-radius: 13px;
+    }
+
+    .apply-card input,
+    .apply-card select,
+    .apply-card textarea {
+        min-height: 47px;
+
+        font-size: 15px;
+    }
+
+    .apply-card textarea {
+        min-height: 120px;
+    }
+
+    .apply-card button {
+        width: 100%;
+
+        font-size: 16px;
+    }
+
+
+    /* Contact */
+
+    .contact-card {
+        padding: 28px 18px;
+    }
+
+    .contact-card i {
+        font-size: 32px;
+    }
+
+    .contact-card h3 {
+        font-size: 21px;
+    }
+
+    .contact-card a,
+    .contact-card p {
+        font-size: 15px;
+
+        word-break: break-word;
+    }
+
+
+    /* Footer */
+
+    footer {
+        padding: 50px 15px 20px;
+    }
+
+    .footer-logo {
+        font-size: 23px;
+    }
+
+    footer h4 {
+        font-size: 18px;
+
+        margin-top: 15px;
+    }
+
+    footer a,
+    footer p {
+        font-size: 14px;
+    }
+
+    .copyright {
+        font-size: 13px;
+
+        line-height: 1.6;
+    }
+
+
+    /* Floating Buttons */
+
+    #floating-whatsapp,
+    #floating-instagram {
+        width: 52px !important;
+
+        height: 52px !important;
+
+        right: 15px !important;
+
+        font-size: 25px !important;
+    }
+
+    #floating-whatsapp {
+        bottom: 15px !important;
+    }
+
+    #floating-instagram {
+        bottom: 77px !important;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .navbar-brand.logo {
+        font-size: 17px;
+    }
+
+    .navbar-brand.logo i {
+        margin-right: 4px;
+    }
+
+    .hero {
+        padding: 45px 0 50px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .hero-badge {
+        font-size: 11px;
+    }
+
+    .section {
+        padding: 45px 12px;
+    }
+
+    .section-title h2 {
+        font-size: 27px;
+    }
+
+    .enquiry-card {
+        padding: 20px 15px;
+    }
+
+    .enquiry-card h3 {
+        font-size: 21px;
+    }
+
+    .loan-card {
+        padding: 22px 18px;
+    }
+
+    .about-title {
+        font-size: 27px;
+    }
+
+    .apply-card {
+        padding: 22px 15px;
+    }
+
+    #floating-whatsapp,
+    #floating-instagram {
+        width: 49px !important;
+
+        height: 49px !important;
+
+        right: 12px !important;
+
+        font-size: 23px !important;
+    }
+
+    #floating-whatsapp {
+        bottom: 12px !important;
+    }
+
+    #floating-instagram {
+        bottom: 70px !important;
+    }
+}
+
+/* =========================
+   BIG PREMIUM BUTTONS
+========================= */
+
+/* Calculate EMI Button */
+.emi-box button,
+.emi-box .btn {
+    width: 100% !important;
+    min-height: 55px !important;
+    padding: 14px 25px !important;
+
+    font-size: 18px !important;
+    font-weight: 700 !important;
+
+    border-radius: 9px !important;
+    border: none !important;
+
+    background: linear-gradient(135deg, #0066ff, #0d6efd, #00a8ff) !important;
+    color: #ffffff !important;
+
+    box-shadow: 0 8px 22px rgba(13, 110, 253, 0.35);
+
+    position: relative;
+    overflow: hidden;
+
+    transition: all 0.3s ease;
+}
+
+
+/* Submit Enquiry Button */
+.enquiry-card button,
+.enquiry-card .btn,
+.apply-card button,
+.apply-card .btn {
+    width: 100% !important;
+    min-height: 55px !important;
+    padding: 14px 25px !important;
+
+    font-size: 18px !important;
+    font-weight: 700 !important;
+
+    border-radius: 9px !important;
+    border: none !important;
+
+    background: linear-gradient(135deg, #0066ff, #0d6efd, #00a8ff) !important;
+    color: #ffffff !important;
+
+    box-shadow: 0 8px 22px rgba(13, 110, 253, 0.35);
+
+    position: relative;
+    overflow: hidden;
+
+    transition: all 0.3s ease;
+}
+
+
+/* =========================
+   BUTTON SHINE
+========================= */
+
+.emi-box button::before,
+.enquiry-card button::before,
+.apply-card button::before,
+.emi-box .btn::before,
+.enquiry-card .btn::before,
+.apply-card .btn::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 55%;
+    height: 100%;
+
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.65),
+            transparent);
+
+    transform: skewX(-25deg);
+
+    transition: left 0.7s ease;
+}
+
+
+/* Hover Shine */
+
+.emi-box button:hover::before,
+.enquiry-card button:hover::before,
+.apply-card button:hover::before,
+.emi-box .btn:hover::before,
+.enquiry-card .btn:hover::before,
+.apply-card .btn:hover::before {
+
+    left: 140%;
+}
+
+
+/* =========================
+   BUTTON HOVER
+========================= */
+
+.emi-box button:hover,
+.enquiry-card button:hover,
+.apply-card button:hover,
+.emi-box .btn:hover,
+.enquiry-card .btn:hover,
+.apply-card .btn:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 30px rgba(13, 110, 253, 0.50);
+
+    color: #ffffff !important;
+}
+
+
+/* =========================
+   BUTTON CLICK
+========================= */
+
+.emi-box button:active,
+.enquiry-card button:active,
+.apply-card button:active,
+.emi-box .btn:active,
+.enquiry-card .btn:active,
+.apply-card .btn:active {
+
+    transform: translateY(0) scale(0.98);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 767px) {
+
+    .emi-box button,
+    .emi-box .btn,
+    .enquiry-card button,
+    .enquiry-card .btn,
+    .apply-card button,
+    .apply-card .btn {
+
+        min-height: 53px !important;
+        font-size: 17px !important;
+        padding: 13px 20px !important;
+    }
+}
+
+/* =========================================
+   PREMIUM APPLY + CALCULATE EMI BUTTONS
+========================================= */
+
+.apply-btn,
+.hero-buttons .btn-primary,
+.emi-box button,
+.emi-box .btn {
+    position: relative !important;
+    overflow: hidden !important;
+
+    min-height: 56px !important;
+    padding: 14px 28px !important;
+
+    border: none !important;
+    border-radius: 10px !important;
+
+    background: linear-gradient(135deg,
+            #0057e7,
+            #0d6efd,
+            #00a8ff) !important;
+
+    color: #ffffff !important;
+
+    font-size: 17px !important;
+    font-weight: 700 !important;
+
+    box-shadow:
+        0 8px 22px rgba(13, 110, 253, 0.35);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* =========================================
+   SHINE EFFECT
+========================================= */
+
+.apply-btn::before,
+.hero-buttons .btn-primary::before,
+.emi-box button::before,
+.emi-box .btn::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -130%;
+
+    width: 60%;
+    height: 100%;
+
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.75),
+            transparent);
+
+    transform: skewX(-25deg);
+
+    transition: left 0.7s ease;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   HOVER SHINE
+========================================= */
+
+.apply-btn:hover::before,
+.hero-buttons .btn-primary:hover::before,
+.emi-box button:hover::before,
+.emi-box .btn:hover::before {
+
+    left: 140%;
+}
+
+
+/* =========================================
+   HOVER EFFECT
+========================================= */
+
+.apply-btn:hover,
+.hero-buttons .btn-primary:hover,
+.emi-box button:hover,
+.emi-box .btn:hover {
+
+    transform: translateY(-3px) !important;
+
+    box-shadow:
+        0 14px 32px rgba(13, 110, 253, 0.50) !important;
+
+    color: #ffffff !important;
+}
+
+
+/* =========================================
+   CLICK EFFECT
+========================================= */
+
+.apply-btn:active,
+.hero-buttons .btn-primary:active,
+.emi-box button:active,
+.emi-box .btn:active {
+
+    transform: scale(0.97) !important;
+
+    box-shadow:
+        0 5px 15px rgba(13, 110, 253, 0.35) !important;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 767px) {
+
+    .hero-buttons .btn-primary,
+    .emi-box button,
+    .emi-box .btn {
+
+        width: 100% !important;
+
+        min-height: 55px !important;
+
+        font-size: 17px !important;
+
+        padding: 14px 20px !important;
+    }
+
+}
+
+/* =========================================
+   FOOTER QUICK LINKS & LOAN PRODUCTS
+========================================= */
+
+footer .col-lg-2>a,
+footer .col-lg-3>a {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    color: #b9c7d8;
+
+    margin-bottom: 10px;
+
+    transition: all 0.3s ease;
+}
+
+
+/* Arrow */
+
+footer .col-lg-2>a i,
+footer .col-lg-3>a i {
+    color: #0d6efd;
+
+    font-size: 11px;
+
+    width: 12px;
+
+    transition: transform 0.3s ease;
+}
+
+
+/* Hover */
+
+footer .col-lg-2>a:hover,
+footer .col-lg-3>a:hover {
+    color: #ffffff;
+
+    padding-left: 5px;
+}
+
+
+/* Arrow animation */
+
+footer .col-lg-2>a:hover i,
+footer .col-lg-3>a:hover i {
+    transform: translateX(4px);
+}
+
+
+/* =========================================
+   FOOTER CONTACT
+========================================= */
+
+footer .col-lg-3 p a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    color: #b9c7d8;
+
+    margin-bottom: 8px;
+
+    transition: all 0.3s ease;
+}
+
+footer .col-lg-3 p a:hover {
+    color: #ffffff;
+}
+
+footer .col-lg-3 p a i {
+    color: #0d6efd;
+}
+
+
+/* Location */
+
+footer .col-lg-3 p>i {
+    color: #0d6efd;
+    margin-right: 8px;
+}
+
+
+/* =========================================
+   MOBILE FOOTER
+========================================= */
+
+@media (max-width: 767px) {
+
+    footer .col-lg-2>a,
+    footer .col-lg-3>a {
+        margin-bottom: 11px;
+    }
+
+}
+
+/* =====================================================
+   MOBILE RESPONSIVE DESIGN
+   EASY LOAN POINT
+===================================================== */
+
+/* ---------- TABLET ---------- */
+
+@media (max-width: 991.98px) {
+
+    /* NAVBAR */
+    .navbar {
+        padding: 10px 15px;
+    }
+
+    .navbar-brand {
+        font-size: 20px;
+    }
+
+    .navbar-brand img {
+        height: 42px !important;
+        width: auto;
+    }
+
+    .navbar-collapse {
+        background: #fff;
+        padding: 15px 0;
+        margin-top: 10px;
+        border-radius: 10px;
+    }
+
+    .navbar-nav {
+        align-items: stretch !important;
+    }
+
+    .nav-item {
+        margin: 2px 0;
+    }
+
+    .nav-link {
+        padding: 10px 15px !important;
+    }
+
+    .apply-btn {
+        margin: 10px 15px 5px !important;
+        text-align: center;
+    }
+
+
+    /* HERO */
+    .hero {
+        padding: 70px 0 50px;
+    }
+
+    .hero h1 {
+        font-size: 44px;
+        line-height: 1.2;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .hero-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+
+    /* ENQUIRY CARD */
+    .enquiry-card {
+        margin-top: 20px;
+    }
+
+
+    /* ABOUT */
+    .about-img {
+        width: 100%;
+        height: auto;
+    }
+
+
+    /* FOOTER */
+    footer {
+        text-align: left;
+    }
+
+    footer .col-lg-2,
+    footer .col-lg-3 {
+        margin-top: 15px;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 767.98px) {
+
+    /* ---------- GENERAL ---------- */
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .container {
+        width: 100%;
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+
+    /* ---------- TOP BAR ---------- */
+
+    .top-bar {
+        padding: 8px 0;
+    }
+
+    .top-content {
+        flex-direction: column;
+        gap: 5px;
+        text-align: center;
+        font-size: 12px;
+    }
+
+    .top-content>div {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .top-content a {
+        font-size: 12px;
+    }
+
+
+    /* ---------- NAVBAR ---------- */
+
+    .navbar {
+        padding: 8px 12px;
+    }
+
+    .navbar-brand {
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        gap: 7px;
+    }
+
+    .navbar-brand img {
+        height: 38px !important;
+    }
+
+    .navbar-toggler {
+        padding: 6px 9px;
+        border-radius: 8px;
+    }
+
+    .navbar-collapse {
+        margin-top: 8px;
+        padding: 8px 0 12px;
+    }
+
+    .dropdown-menu {
+        border: none;
+        box-shadow: none;
+        background: #f8f9fa;
+        margin-left: 10px;
+    }
+
+    .dropdown-item {
+        padding: 9px 15px;
+    }
+
+
+    /* ---------- HERO ---------- */
+
+    .hero {
+        padding: 55px 0 40px;
+    }
+
+    .hero .row {
+        margin: 0;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+        line-height: 1.2;
+        margin-top: 15px;
+    }
+
+    .hero h1 br {
+        display: none;
+    }
+
+    .hero p {
+        font-size: 15px;
+        line-height: 1.7;
+        margin-top: 15px;
+    }
+
+    .hero-badge {
+        font-size: 12px;
+        padding: 7px 12px;
+    }
+
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        font-size: 15px;
+        padding: 12px 18px;
+    }
+
+
+    /* ---------- QUICK ENQUIRY ---------- */
+
+    .enquiry-card {
+        padding: 22px 18px;
+        margin-top: 25px;
+        border-radius: 15px;
+    }
+
+    .enquiry-card h3 {
+        font-size: 23px;
+    }
+
+    .enquiry-card .form-control,
+    .enquiry-card .form-select {
+        min-height: 45px;
+        font-size: 14px;
+    }
+
+
+    /* ---------- STATS ---------- */
+
+    .stats-section {
+        padding: 35px 0;
+    }
+
+    .stat-card {
+        padding: 20px 15px;
+    }
+
+    .stat-card i {
+        font-size: 28px;
+    }
+
+    .stat-card h3 {
+        font-size: 25px;
+    }
+
+    .stat-card p {
+        font-size: 13px;
+    }
+
+
+    /* ---------- SECTIONS ---------- */
+
+    .section {
+        padding: 55px 0;
+    }
+
+    .section-title {
+        margin-bottom: 30px;
+    }
+
+    .section-title h2 {
+        font-size: 28px;
+        line-height: 1.3;
+    }
+
+    .section-title p {
+        font-size: 14px;
+    }
+
+
+    /* ---------- LOAN CARDS ---------- */
+
+    .loan-card {
+        padding: 25px 20px;
+        height: auto;
+    }
+
+    .loan-card h3 {
+        font-size: 21px;
+    }
+
+    .loan-card p {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .loan-icon {
+        width: 55px;
+        height: 55px;
+        font-size: 22px;
+    }
+
+
+    /* ---------- ABOUT ---------- */
+
+    .about-img {
+        width: 100%;
+        height: auto;
+        border-radius: 15px;
+    }
+
+    .about-title {
+        font-size: 28px;
+        line-height: 1.3;
+    }
+
+    .check-list {
+        padding-left: 0;
+    }
+
+    .check-list li {
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+
+
+    /* ---------- HOW IT WORKS ---------- */
+
+    .step-card {
+        padding: 25px 18px;
+    }
+
+    .step-number {
+        font-size: 24px;
+    }
+
+    .step-card h3 {
+        font-size: 20px;
+    }
+
+    .step-card p {
+        font-size: 14px;
+    }
+
+
+    /* ---------- EMI ---------- */
+
+    .emi-box {
+        padding: 22px 18px;
+        border-radius: 15px;
+    }
+
+    .emi-box label {
+        font-size: 14px;
+    }
+
+    .emi-box .form-control {
+        min-height: 45px;
+    }
+
+    .emi-result {
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 25px;
+        text-align: center;
+    }
+
+    .emi-result>div {
+        width: 100%;
+    }
+
+    .emi-result h3 {
+        font-size: 24px;
+    }
+
+
+    /* ---------- ELIGIBILITY ---------- */
+
+    .info-card {
+        padding: 25px 18px;
+    }
+
+    .info-card h3 {
+        font-size: 20px;
+    }
+
+    .info-card p {
+        font-size: 14px;
+    }
+
+
+    /* ---------- DOCUMENTS ---------- */
+
+    .document-card {
+        padding: 25px 18px;
+    }
+
+    .document-card h3 {
+        font-size: 20px;
+    }
+
+    .document-card p {
+        font-size: 14px;
+    }
+
+
+    /* ---------- APPLY FORM ---------- */
+
+    .apply-section {
+        padding: 50px 0;
+    }
+
+    .apply-card {
+        padding: 25px 18px;
+        border-radius: 15px;
+    }
+
+    .apply-card .section-title h2 {
+        font-size: 27px;
+    }
+
+    .apply-card .form-control,
+    .apply-card .form-select {
+        min-height: 46px;
+        font-size: 14px;
+    }
+
+    .apply-card textarea {
+        min-height: 110px;
+    }
+
+    .apply-card button {
+        width: 100%;
+    }
+
+
+    /* ---------- CONTACT ---------- */
+
+    .contact-card {
+        padding: 25px 18px;
+        min-height: auto;
+    }
+
+    .contact-card h3 {
+        font-size: 20px;
+    }
+
+    .contact-card a,
+    .contact-card p {
+        font-size: 14px;
+        word-break: break-word;
+    }
+
+
+    /* =====================================================
+     FOOTER
+  ===================================================== */
+
+    footer {
+        padding: 45px 0 20px;
+    }
+
+    footer .row {
+        row-gap: 30px;
+    }
+
+    footer .col-lg-4,
+    footer .col-lg-2,
+    footer .col-lg-3 {
+        width: 100%;
+    }
+
+    .footer-logo {
+        font-size: 22px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .footer-logo img {
+        height: 42px !important;
+    }
+
+    footer p {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    footer h4 {
+        font-size: 19px;
+        margin-bottom: 15px;
+    }
+
+    /* Footer Links */
+
+    footer .col-lg-2>a,
+    footer .col-lg-3>a {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        margin-bottom: 10px;
+        font-size: 14px;
+        text-decoration: none;
+    }
+
+    footer .col-lg-2>a i,
+    footer .col-lg-3>a i {
+        font-size: 11px;
+        min-width: 12px;
+    }
+
+    footer hr {
+        margin: 30px 0 18px;
+    }
+
+    .copyright {
+        text-align: center;
+        font-size: 12px;
+        line-height: 1.6;
+    }
+
+
+    /* ---------- SOCIAL ICONS ---------- */
+
+    .social-links {
+        display: flex;
+        gap: 10px;
+        margin-top: 18px;
+    }
+
+    .social-links a {
+        width: 38px;
+        height: 38px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    /* =====================================================
+     FLOATING WHATSAPP + INSTAGRAM
+  ===================================================== */
+
+    #floating-whatsapp,
+    #floating-instagram {
+        width: 48px;
+        height: 48px;
+        font-size: 22px;
+        right: 15px;
+    }
+
+    #floating-whatsapp {
+        bottom: 75px;
+    }
+
+    #floating-instagram {
+        bottom: 18px;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 400px) {
+
+    .container {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .navbar-brand {
+        font-size: 16px;
+    }
+
+    .navbar-brand img {
+        height: 34px !important;
+    }
+
+    .hero {
+        padding-top: 45px;
+    }
+
+    .hero h1 {
+        font-size: 29px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .section-title h2 {
+        font-size: 25px;
+    }
+
+    .enquiry-card {
+        padding: 18px 15px;
+    }
+
+    .apply-card {
+        padding: 20px 15px;
+    }
+
+    .footer-logo {
+        font-size: 20px;
+    }
+
+}
+
+/* =====================================================
+   TRANSPARENT STICKY NAVBAR
+===================================================== */
+
+.custom-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+
+    background: rgba(255, 255, 255, 0.12) !important;
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.20);
+
+    transition: all 0.3s ease;
+}
+
+
+/* LOGO */
+
+.custom-navbar .navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 23px;
+    font-weight: 700;
+
+    color: #ffffff !important;
+
+    text-decoration: none;
+}
+
+.custom-navbar .navbar-brand img {
+    object-fit: contain;
+}
+
+
+/* NAV LINKS */
+
+.custom-navbar .nav-link {
+    color: #ffffff !important;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    padding: 10px 12px !important;
+
+    transition: all 0.3s ease;
+}
+
+.custom-navbar .nav-link:hover,
+.custom-navbar .nav-link.active {
+    color: #ffd166 !important;
+}
+
+
+/* DROPDOWN */
+
+.custom-navbar .dropdown-menu {
+    border: none;
+
+    border-radius: 12px;
+
+    padding: 8px;
+
+    margin-top: 10px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+
+    background: rgba(255, 255, 255, 0.98);
+}
+
+.custom-navbar .dropdown-item {
+    border-radius: 8px;
+
+    padding: 10px 14px;
+
+    font-weight: 500;
+
+    transition: 0.2s ease;
+}
+
+.custom-navbar .dropdown-item:hover {
+    background: #f1f5ff;
+
+    color: #0d6efd;
+}
+
+
+/* APPLY BUTTON */
+
+.custom-navbar .apply-btn {
+    padding: 10px 20px;
+
+    border-radius: 8px;
+
+    font-weight: 600;
+}
+
+
+/* MOBILE MENU BUTTON */
+
+.custom-navbar .navbar-toggler {
+    border: 1px solid rgba(255, 255, 255, 0.6);
+
+    padding: 7px 9px;
+
+    box-shadow: none !important;
+}
+
+.custom-navbar .navbar-toggler:focus {
+    box-shadow: none !important;
+}
+
+
+/* =====================================================
+   MOBILE RESPONSIVE
+===================================================== */
+
+@media (max-width: 991.98px) {
+
+    .custom-navbar {
+        background: rgba(10, 25, 47, 0.96) !important;
+
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+    }
+
+
+    .custom-navbar .navbar-collapse {
+
+        margin-top: 12px;
+
+        padding: 15px;
+
+        border-radius: 14px;
+
+        background: rgba(10, 25, 47, 0.97);
+
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.20);
+    }
+
+
+    .custom-navbar .nav-link {
+
+        padding: 12px 10px !important;
+
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+
+    .custom-navbar .dropdown-menu {
+
+        margin-top: 5px;
+
+        background: #ffffff;
+
+        box-shadow: none;
+    }
+
+
+    .custom-navbar .apply-btn {
+
+        width: 100%;
+
+        text-align: center;
+
+        padding: 12px;
+    }
+
+}
+
+
+/* SMALL MOBILE */
+
+@media (max-width: 575.98px) {
+
+    .custom-navbar .navbar-brand {
+
+        font-size: 18px;
+
+        gap: 6px;
+    }
+
+    .custom-navbar .navbar-brand img {
+
+        height: 40px;
+        width: auto;
+    }
+
+}
+/* =====================================================
+   EASY LOAN POINT - STICKY TRANSPARENT NAVBAR
+   ===================================================== */
+
+.custom-navbar {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 9999 !important;
+
+    /* Transparent glass effect */
+    background: rgba(10, 25, 47, 0.88) !important;
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
+
+    transition: all 0.3s ease;
+}
+
+
+/* Navbar container */
+.custom-navbar .container {
+    min-height: 72px;
+}
+
+
+/* Logo */
+.custom-navbar .navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: #ffffff !important;
+    font-weight: 700;
+    font-size: 20px;
+
+    text-decoration: none;
+}
+
+
+/* Logo image */
+.custom-navbar .navbar-brand img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+
+
+/* Navbar links */
+.custom-navbar .nav-link {
+    color: #ffffff !important;
+
+    font-weight: 500;
+    font-size: 15px;
+
+    padding: 10px 13px !important;
+
+    transition: all 0.3s ease;
+}
+
+
+/* Hover */
+.custom-navbar .nav-link:hover,
+.custom-navbar .nav-link:focus {
+    color: #ffc107 !important;
+}
+
+
+/* Active */
+.custom-navbar .nav-link.active {
+    color: #ffc107 !important;
+    font-weight: 600;
+}
+
+
+/* Dropdown arrow */
+.custom-navbar .dropdown-toggle::after {
+    margin-left: 5px;
+}
+
+
+/* Dropdown menu */
+.custom-navbar .dropdown-menu {
+    background: #ffffff;
+
+    border: none;
+    border-radius: 10px;
+
+    padding: 8px;
+
+    margin-top: 8px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+
+/* Dropdown items */
+.custom-navbar .dropdown-item {
+    color: #172b4d;
+
+    font-weight: 500;
+
+    padding: 10px 14px;
+
+    border-radius: 7px;
+
+    transition: all 0.2s ease;
+}
+
+
+/* Dropdown hover */
+.custom-navbar .dropdown-item:hover,
+.custom-navbar .dropdown-item:focus {
+    background: #f1f5f9;
+    color: #0d6efd;
+}
+
+
+/* Apply Now button */
+.custom-navbar .apply-btn {
+    color: #ffffff !important;
+
+    background: #0d6efd !important;
+
+    border: 1px solid #0d6efd !important;
+
+    border-radius: 8px;
+
+    padding: 10px 20px !important;
+
+    font-weight: 600;
+
+    transition: all 0.3s ease;
+}
+
+
+/* Apply button hover */
+.custom-navbar .apply-btn:hover {
+    background: #ffc107 !important;
+    border-color: #ffc107 !important;
+
+    color: #111827 !important;
+
+    transform: translateY(-1px);
+}
+
+
+/* Mobile menu button */
+.custom-navbar .navbar-toggler {
+    border: 1px solid rgba(255, 255, 255, 0.45);
+
+    padding: 7px 10px;
+
+    box-shadow: none !important;
+}
+
+
+/* Mobile menu icon */
+.custom-navbar .navbar-toggler-icon {
+    filter: brightness(0) invert(1);
+}
+
+
+/* =====================================================
+   MOBILE NAVBAR
+   ===================================================== */
+
+@media (max-width: 991.98px) {
+
+    .custom-navbar .navbar-collapse {
+        background: rgba(10, 25, 47, 0.97);
+
+        margin-top: 10px;
+
+        padding: 12px;
+
+        border-radius: 12px;
+
+        border: 1px solid rgba(255, 255, 255, 0.12);
+
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+
+    .custom-navbar .nav-link {
+        padding: 11px 12px !important;
+    }
+
+
+    .custom-navbar .apply-btn {
+        display: inline-block;
+
+        margin-top: 5px;
+    }
+
+
+    .custom-navbar .dropdown-menu {
+        background: rgba(255, 255, 255, 0.98);
+
+        margin-top: 3px;
+    }
+
+}
+
+
+/* =====================================================
+   IMPORTANT: STICKY NAVBAR FIX
+   ===================================================== */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+
+/* Section navbar ke neeche hide na ho */
+section[id] {
+    scroll-margin-top: 85px;
+}
+/* =========================================
+   STICKY NAVBAR - FIXED
+   ========================================= */
+
+/* Sticky ko block karne wali common problem */
+html,
+body {
+    overflow-x: hidden !important;
+    overflow-y: visible !important;
+}
+
+/* Navbar */
+nav.custom-navbar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+
+    width: 100% !important;
+
+    z-index: 99999 !important;
+
+    background: rgba(10, 25, 47, 0.94) !important;
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.20);
+
+    min-height: 72px;
+
+    transition: background 0.3s ease;
+}
+
+
+/* Navbar container */
+nav.custom-navbar .container {
+    min-height: 72px;
+
+    display: flex;
+    align-items: center;
+}
+
+
+/* Logo */
+nav.custom-navbar .navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: #fff !important;
+
+    font-weight: 700;
+    font-size: 20px;
+
+    text-decoration: none;
+}
+
+
+/* Logo image */
+nav.custom-navbar .navbar-brand img {
+    width: 48px;
+    height: 48px;
+
+    object-fit: contain;
+}
+
+
+/* Menu */
+nav.custom-navbar .nav-link {
+    color: #fff !important;
+
+    font-weight: 500;
+    font-size: 15px;
+
+    padding: 10px 13px !important;
+
+    transition: 0.3s ease;
+}
+
+
+/* Hover */
+nav.custom-navbar .nav-link:hover {
+    color: #ffc107 !important;
+}
+
+
+/* Active */
+nav.custom-navbar .nav-link.active {
+    color: #ffc107 !important;
+}
+
+
+/* Apply button */
+nav.custom-navbar .apply-btn {
+    background: #0d6efd !important;
+
+    color: #fff !important;
+
+    border: 1px solid #0d6efd !important;
+
+    border-radius: 8px;
+
+    padding: 10px 20px !important;
+
+    font-weight: 600;
+}
+
+
+nav.custom-navbar .apply-btn:hover {
+    background: #ffc107 !important;
+
+    border-color: #ffc107 !important;
+
+    color: #111 !important;
+}
+
+
+/* Dropdown */
+nav.custom-navbar .dropdown-menu {
+    background: #fff !important;
+
+    border: none;
+
+    border-radius: 10px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.20);
+
+    margin-top: 8px;
+}
+
+
+nav.custom-navbar .dropdown-item {
+    color: #172b4d !important;
+
+    padding: 10px 15px;
+
+    border-radius: 7px;
+}
+
+
+nav.custom-navbar .dropdown-item:hover {
+    background: #f1f5f9 !important;
+
+    color: #0d6efd !important;
+}
+
+
+/* Mobile */
+@media (max-width: 991.98px) {
+
+    nav.custom-navbar .navbar-collapse {
+        background: rgba(10, 25, 47, 0.98);
+
+        margin-top: 10px;
+
+        padding: 12px;
+
+        border-radius: 12px;
+
+        border: 1px solid rgba(255,255,255,0.15);
+    }
+
+}
+
+
+/* =========================================
+   IMPORTANT
+   Navbar fixed hone ki wajah se content
+   navbar ke neeche nahi chhupenga
+   ========================================= */
+
+body {
+    padding-top: 72px !important;
+}
+
+
+/* Smooth section jump */
+html {
+    scroll-behavior: smooth;
+}
+
+section[id] {
+    scroll-margin-top: 85px;
+}
