@@ -20,6 +20,307 @@
 
   <!-- Favicon -->
   <link rel="shortcut icon" href="Easy_Laon_Point_Logo.png" type="image/x-icon">
+  <!-- =====================================================
+       EMI CALCULATOR STYLE
+  ====================================================== -->
+
+  <style>
+    .emi-modern-section {
+      background: linear-gradient(135deg, #f8fbff, #eef8fc);
+      padding: 80px 0;
+    }
+
+    .emi-modern-box {
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid #d9e7f4;
+      border-radius: 22px;
+      padding: 40px;
+      box-shadow: 0 15px 45px rgba(18, 57, 105, 0.08);
+    }
+
+    .emi-input-card {
+      background: rgba(255, 255, 255, 0.75);
+      border: 1px solid #e5edf5;
+      border-radius: 20px;
+      padding: 22px 18px;
+      margin-bottom: 28px;
+    }
+
+    .emi-input-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+
+    .emi-input-title {
+      color: #354a68;
+      font-size: 17px;
+      font-weight: 600;
+      margin-bottom: 3px;
+    }
+
+    .emi-input-subtitle {
+      color: #7183a0;
+      font-size: 13px;
+      margin: 0;
+    }
+
+    .emi-value-box {
+      min-width: 153px;
+      height: 49px;
+      border: 1px solid #c9def5;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      background: #fafdff;
+      overflow: hidden;
+    }
+
+    .emi-value-symbol {
+      color: #143879;
+      font-size: 17px;
+      font-weight: 700;
+      padding-left: 15px;
+      padding-right: 10px;
+    }
+
+    .emi-value-input {
+      border: none;
+      outline: none;
+      background: transparent;
+      color: #123676;
+      font-size: 18px;
+      font-weight: 700;
+      width: 100%;
+      padding: 0 10px 0 0;
+    }
+
+    .emi-value-input:focus {
+      box-shadow: none;
+    }
+
+    .emi-slider {
+      width: 100%;
+      height: 7px;
+      border-radius: 20px;
+      appearance: none;
+      -webkit-appearance: none;
+      background: #d8d8d8;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .emi-slider::-webkit-slider-thumb {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #123676;
+      cursor: pointer;
+      border: none;
+    }
+
+    .emi-slider::-moz-range-thumb {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #123676;
+      cursor: pointer;
+      border: none;
+    }
+
+    .emi-result-card {
+      height: 100%;
+      min-height: 550px;
+      border: 1px solid #d7e4f0;
+      box-sizing: border-box;
+      border-radius: 20px;
+      padding: 32px;
+      background: rgba(255, 255, 255, 0.55);
+      text-align: center;
+    }
+
+    .emi-chart-wrap {
+      position: relative;
+      width: 250px;
+      flex: 0 0 250px;
+      height: 250px;
+      margin: 0 auto 30px;
+    }
+
+    .emi-chart {
+      position: relative;
+      width: 250px;
+      height: 250px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      background: conic-gradient(#123676 0deg,
+          #123676 var(--principal-angle),
+          #d9a038 var(--principal-angle),
+          #d9a038 360deg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .emi-chart::after {
+      content: "";
+      width: 145px;
+      height: 145px;
+      background: #dce6f2;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    .emi-chart-center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 3;
+      width: 180px;
+      text-align: center;
+      pointer-events: none;
+    }
+
+    .emi-chart-center span {
+      display: block;
+      color: #7183a0;
+      font-size: 14px;
+      margin-bottom: 3px;
+    }
+
+    .emi-chart-center strong {
+      color: #123676;
+      font-size: 24px;
+      font-weight: 800;
+      display: block;
+    }
+
+    .emi-stat-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 15px;
+      margin-top: 0;
+      width: 100%;
+    }
+
+    .emi-stat {
+      border: 1px solid #c9def5;
+      border-radius: 16px;
+      padding: 20px 10px;
+      background: #fafdff;
+    }
+
+    .emi-stat span {
+      display: block;
+      color: #7183a0;
+      font-size: 13px;
+      margin-bottom: 6px;
+    }
+
+    .emi-stat strong {
+      display: block;
+      color: #123676;
+      font-size: 18px;
+    }
+
+    .emi-note {
+      color: #7183a0;
+      font-size: 13px;
+      line-height: 1.6;
+      margin: 22px 0;
+    }
+
+    .emi-apply-btn {
+      background: #123676;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 14px;
+      font-weight: 700;
+      box-shadow: 0 5px 12px rgba(18, 54, 118, 0.25);
+    }
+
+    .emi-apply-btn:hover {
+      background: #0d2a5e;
+    }
+
+    @media (max-width: 991px) {
+
+      .emi-modern-box {
+        padding: 25px;
+      }
+
+      .emi-result-card {
+        margin-top: 10px;
+      }
+
+    }
+
+    @media (max-width: 575px) {
+
+      .emi-modern-section {
+        padding: 55px 0;
+      }
+
+      .emi-modern-box {
+        padding: 15px;
+        border-radius: 16px;
+      }
+
+      .emi-input-card {
+        padding: 18px 14px;
+      }
+
+      .emi-input-header {
+        align-items: flex-start;
+      }
+
+      .emi-value-box {
+        min-width: 125px;
+      }
+
+      .emi-value-input {
+        font-size: 15px;
+      }
+
+      .emi-chart-wrap,
+      .emi-chart {
+        width: 210px;
+        height: 210px;
+      }
+
+      .emi-chart-wrap {
+        flex-basis: 210px;
+      }
+
+      .emi-chart::after {
+        width: 125px;
+        height: 125px;
+      }
+
+      .emi-chart-center strong {
+        font-size: 20px;
+      }
+
+      .emi-stat-row {
+        grid-template-columns: 1fr;
+      }
+
+      .emi-result-card {
+        min-height: auto;
+        padding: 22px 15px;
+      }
+
+    }
+  </style>
 
 </head>
 
@@ -39,13 +340,72 @@
   </script>
 
 
+  <!-- =====================================================
+       TOP BAR
+  ====================================================== -->
+
+  <div class="top-bar">
+
+    <div class="container top-content">
+
+      <span>
+
+        <i class="fa-solid fa-clock"></i>
+
+        Mon - Sat: 9:00 AM - 6:00 PM
+
+      </span>
+
+
+      <div>
+
+        <a href="tel:+917053005242">
+
+          <i class="fa-solid fa-phone"></i>
+
+          +91 7053005242
+
+        </a>
+
+
+        <a href="tel:+918796366914">
+
+          <i class="fa-solid fa-phone"></i>
+
+          +91 8796366914
+
+        </a>
+
+
+        <a href="mailto:Easyloanpoint9@gmail.com">
+
+          <i class="fa-solid fa-envelope"></i>
+
+          Easyloanpoint9@gmail.com
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- =====================================================
+       NAVBAR
+  ====================================================== -->
+
   <nav class="navbar navbar-expand-lg navbar-dark sticky-top custom-navbar">
 
     <div class="container">
 
       <!-- LOGO -->
+
       <a class="navbar-brand logo" href="#home">
-        <img src="Loan img.png" alt="" height="50">
+
+        <img src="Loan img.png" alt="Easy Loan Point" height="50">
 
         <span>Easy Loan Point</span>
 
@@ -53,6 +413,7 @@
 
 
       <!-- MOBILE TOGGLE -->
+
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu"
         aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
 
@@ -62,24 +423,35 @@
 
 
       <!-- MENU -->
+
       <div class="collapse navbar-collapse" id="navbarMenu">
 
         <ul class="navbar-nav ms-auto align-items-lg-center">
 
           <li class="nav-item">
+
             <a class="nav-link active" href="#home">
+
               Home
+
             </a>
+
           </li>
 
+
           <li class="nav-item">
+
             <a class="nav-link" href="#about">
+
               About
+
             </a>
+
           </li>
 
 
           <!-- LOANS DROPDOWN -->
+
           <li class="nav-item dropdown">
 
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -88,42 +460,61 @@
 
             </a>
 
+
             <ul class="dropdown-menu">
 
               <li>
+
                 <a class="dropdown-item" href="#loans">
+
                   Personal Loan
+
                 </a>
+
               </li>
 
+
               <li>
+
                 <a class="dropdown-item" href="#loans">
+
                   Home Loan
+
                 </a>
+
               </li>
 
+
               <li>
+
                 <a class="dropdown-item" href="#loans">
+
                   Business Loan
+
                 </a>
+
               </li>
 
+
               <li>
+
                 <a class="dropdown-item" href="#loans">
+
                   Vehicle Loan
+
                 </a>
+
               </li>
 
-              <li>
-                <a class="dropdown-item" href="#loans">
-                  Education Loan
-                </a>
-              </li>
 
               <li>
+
                 <a class="dropdown-item" href="#loans">
-                  Gold Loan
+
+                  Loan Against Property
+
                 </a>
+
               </li>
 
             </ul>
@@ -132,31 +523,51 @@
 
 
           <li class="nav-item">
+
             <a class="nav-link" href="#emi">
+
               EMI Calculator
+
             </a>
+
           </li>
 
+
           <li class="nav-item">
+
             <a class="nav-link" href="#eligibility">
+
               Eligibility
+
             </a>
+
           </li>
 
+
           <li class="nav-item">
+
             <a class="nav-link" href="#documents">
+
               Documents
+
             </a>
+
           </li>
 
+
           <li class="nav-item">
+
             <a class="nav-link" href="#contact">
+
               Contact
+
             </a>
+
           </li>
 
 
           <!-- APPLY BUTTON -->
+
           <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
 
             <a class="btn btn-primary apply-btn" href="#apply">
@@ -174,6 +585,9 @@
     </div>
 
   </nav>
+
+
+
   <!-- =====================================================
        HERO
   ====================================================== -->
@@ -184,9 +598,7 @@
 
       <div class="row align-items-center">
 
-
         <div class="col-lg-7">
-
 
           <span class="hero-badge">
 
@@ -217,7 +629,6 @@
 
           <div class="hero-buttons">
 
-
             <a href="#apply" class="btn btn-primary btn-lg">
 
               Apply for a Loan
@@ -231,20 +642,16 @@
 
             </a>
 
-
           </div>
 
         </div>
-
 
 
         <!-- QUICK ENQUIRY -->
 
         <div class="col-lg-5 mt-5 mt-lg-0">
 
-
           <div class="enquiry-card">
-
 
             <h3>
 
@@ -255,12 +662,13 @@
 
             <p
               style="color: #66788f !important; font-size: 16px; font-weight: 500; margin-top: 8px; margin-bottom: 22px;">
+
               Tell us about your requirement.
+
             </p>
 
 
             <form id="quickLoanForm" onsubmit="submitQuickEnquiry(event)">
-
 
               <div class="mb-3">
 
@@ -274,7 +682,6 @@
                 <input type="text" name="name" class="form-control" placeholder="Enter your name" required>
 
               </div>
-
 
 
               <div class="mb-3">
@@ -291,7 +698,6 @@
                   oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 10)" required>
 
               </div>
-
 
 
               <div class="mb-3">
@@ -340,23 +746,15 @@
                   </option>
 
 
-                  <option value="Education Loan">
+                  <option value="Loan Against Property">
 
-                    Education Loan
-
-                  </option>
-
-
-                  <option value="Gold Loan">
-
-                    Gold Loan
+                    Loan Against Property
 
                   </option>
 
                 </select>
 
               </div>
-
 
 
               <button type="submit" class="btn btn-primary w-100">
@@ -366,12 +764,9 @@
               </button>
 
 
-
               <div id="quickSuccess" class="form-success"></div>
 
-
             </form>
-
 
           </div>
 
@@ -395,29 +790,19 @@
 
       <div class="row g-4">
 
-
         <div class="col-md-3">
 
           <div class="stat-card">
 
             <i class="fa-solid fa-users"></i>
 
-            <h3>
+            <h3>10,000+</h3>
 
-              10,000+
-
-            </h3>
-
-            <p>
-
-              Customers Assisted
-
-            </p>
+            <p>Customers Assisted</p>
 
           </div>
 
         </div>
-
 
 
         <div class="col-md-3">
@@ -426,22 +811,13 @@
 
             <i class="fa-solid fa-hand-holding-dollar"></i>
 
-            <h3>
+            <h3>₹100 Cr+</h3>
 
-              ₹100 Cr+
-
-            </h3>
-
-            <p>
-
-              Loan Assistance
-
-            </p>
+            <p>Loan Assistance</p>
 
           </div>
 
         </div>
-
 
 
         <div class="col-md-3">
@@ -450,22 +826,13 @@
 
             <i class="fa-solid fa-bolt"></i>
 
-            <h3>
+            <h3>Quick</h3>
 
-              Quick
-
-            </h3>
-
-            <p>
-
-              Application Process
-
-            </p>
+            <p>Application Process</p>
 
           </div>
 
         </div>
-
 
 
         <div class="col-md-3">
@@ -474,22 +841,13 @@
 
             <i class="fa-solid fa-headset"></i>
 
-            <h3>
+            <h3>6 Days</h3>
 
-              6 Days
-
-            </h3>
-
-            <p>
-
-              Customer Support
-
-            </p>
+            <p>Customer Support</p>
 
           </div>
 
         </div>
-
 
       </div>
 
@@ -507,22 +865,11 @@
 
     <div class="container">
 
-
       <div class="section-title">
 
-        <span>
+        <span>LOAN SOLUTIONS</span>
 
-          LOAN SOLUTIONS
-
-        </span>
-
-
-        <h2>
-
-          Choose The Right Loan
-
-        </h2>
-
+        <h2>Choose The Right Loan</h2>
 
         <p>
 
@@ -533,9 +880,9 @@
       </div>
 
 
-
       <div class="row g-4">
 
+        <!-- PERSONAL -->
 
         <div class="col-md-6 col-lg-4">
 
@@ -548,11 +895,7 @@
             </div>
 
 
-            <h3>
-
-              Personal Loan
-
-            </h3>
+            <h3>Personal Loan</h3>
 
 
             <p>
@@ -574,6 +917,7 @@
         </div>
 
 
+        <!-- HOME -->
 
         <div class="col-md-6 col-lg-4">
 
@@ -586,11 +930,7 @@
             </div>
 
 
-            <h3>
-
-              Home Loan
-
-            </h3>
+            <h3>Home Loan</h3>
 
 
             <p>
@@ -612,6 +952,7 @@
         </div>
 
 
+        <!-- BUSINESS -->
 
         <div class="col-md-6 col-lg-4">
 
@@ -624,11 +965,7 @@
             </div>
 
 
-            <h3>
-
-              Business Loan
-
-            </h3>
+            <h3>Business Loan</h3>
 
 
             <p>
@@ -650,6 +987,7 @@
         </div>
 
 
+        <!-- VEHICLE -->
 
         <div class="col-md-6 col-lg-4">
 
@@ -662,11 +1000,7 @@
             </div>
 
 
-            <h3>
-
-              Vehicle Loan
-
-            </h3>
+            <h3>Vehicle Loan</h3>
 
 
             <p>
@@ -688,6 +1022,7 @@
         </div>
 
 
+        <!-- LOAN AGAINST PROPERTY -->
 
         <div class="col-md-6 col-lg-4">
 
@@ -695,60 +1030,18 @@
 
             <div class="loan-icon">
 
-              <i class="fa-solid fa-graduation-cap"></i>
+              <i class="fa-solid fa-building"></i>
 
             </div>
 
 
-            <h3>
-
-              Education Loan
-
-            </h3>
+            <h3>Loan Against Property</h3>
 
 
             <p>
 
-              Financial assistance for higher
-              education and professional courses.
-
-            </p>
-
-
-            <a href="#apply">
-
-              Apply Now →
-
-            </a>
-
-          </div>
-
-        </div>
-
-
-
-        <div class="col-md-6 col-lg-4">
-
-          <div class="loan-card">
-
-            <div class="loan-icon">
-
-              <i class="fa-solid fa-coins"></i>
-
-            </div>
-
-
-            <h3>
-
-              Gold Loan
-
-            </h3>
-
-
-            <p>
-
-              Loan solutions against eligible
-              gold assets as per lender policies.
+              Funding options against eligible
+              residential or commercial property.
 
             </p>
 
@@ -782,7 +1075,6 @@
 
       <div class="row align-items-center g-5">
 
-
         <div class="col-lg-6">
 
           <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1000&q=80"
@@ -791,9 +1083,7 @@
         </div>
 
 
-
         <div class="col-lg-6">
-
 
           <span class="section-label">
 
@@ -820,7 +1110,6 @@
 
 
           <ul class="check-list">
-
 
             <li>
 
@@ -857,7 +1146,6 @@
 
             </li>
 
-
           </ul>
 
 
@@ -866,7 +1154,6 @@
             Start Your Enquiry
 
           </a>
-
 
         </div>
 
@@ -886,147 +1173,75 @@
 
     <div class="container">
 
-
       <div class="section-title">
 
-        <span>
+        <span>HOW IT WORKS</span>
 
-          HOW IT WORKS
-
-        </span>
-
-
-        <h2>
-
-          Simple 4-Step Process
-
-        </h2>
+        <h2>Simple 4-Step Process</h2>
 
       </div>
 
 
-
       <div class="row g-4">
 
-
         <div class="col-md-3">
 
           <div class="step-card">
 
-            <div class="step-number">
+            <div class="step-number">01</div>
 
-              01
+            <h3>Apply</h3>
 
-            </div>
-
-
-            <h3>
-
-              Apply
-
-            </h3>
-
-
-            <p>
-
-              Submit your basic details.
-
-            </p>
+            <p>Submit your basic details.</p>
 
           </div>
 
         </div>
 
 
-
         <div class="col-md-3">
 
           <div class="step-card">
 
-            <div class="step-number">
+            <div class="step-number">02</div>
 
-              02
+            <h3>Review</h3>
 
-            </div>
-
-
-            <h3>
-
-              Review
-
-            </h3>
-
-
-            <p>
-
-              Your information is reviewed.
-
-            </p>
+            <p>Your information is reviewed.</p>
 
           </div>
 
         </div>
 
 
-
         <div class="col-md-3">
 
           <div class="step-card">
 
-            <div class="step-number">
+            <div class="step-number">03</div>
 
-              03
+            <h3>Approval</h3>
 
-            </div>
-
-
-            <h3>
-
-              Approval
-
-            </h3>
-
-
-            <p>
-
-              Eligibility and documents are checked.
-
-            </p>
+            <p>Eligibility and documents are checked.</p>
 
           </div>
 
         </div>
 
 
-
         <div class="col-md-3">
 
           <div class="step-card">
 
-            <div class="step-number">
+            <div class="step-number">04</div>
 
-              04
+            <h3>Disbursal</h3>
 
-            </div>
-
-
-            <h3>
-
-              Disbursal
-
-            </h3>
-
-
-            <p>
-
-              Loan is processed as applicable.
-
-            </p>
+            <p>Loan is processed as applicable.</p>
 
           </div>
 
         </div>
-
 
       </div>
 
@@ -1037,154 +1252,290 @@
 
 
   <!-- =====================================================
-       EMI
+       MODERN EMI CALCULATOR
   ====================================================== -->
 
-  <section id="emi" class="section">
+  <section id="emi" class="emi-modern-section">
 
     <div class="container">
 
-
       <div class="section-title">
 
-        <span>
+        <span>EMI CALCULATOR</span>
 
-          EMI CALCULATOR
+        <h2>Calculate Your EMI</h2>
 
-        </span>
+        <p>
 
+          Adjust the loan amount, interest rate and tenure
+          to calculate your estimated monthly EMI.
 
-        <h2>
-
-          Calculate Your EMI
-
-        </h2>
+        </p>
 
       </div>
 
 
+      <div class="emi-modern-box">
 
-      <div class="emi-box">
-
-
-        <div class="row g-4">
+        <div class="row g-5 align-items-stretch">
 
 
-          <div class="col-md-4">
+          <!-- =================================================
+               LEFT SIDE
+          ================================================== -->
 
-            <label>
-
-              Loan Amount
-
-            </label>
+          <div class="col-lg-6">
 
 
-            <input type="number" id="loanAmount" value="500000" class="form-control">
+            <!-- LOAN AMOUNT -->
+
+            <div class="emi-input-card">
+
+              <div class="emi-input-header">
+
+                <div>
+
+                  <div class="emi-input-title">
+
+                    Loan amount
+
+                  </div>
+
+                  <p class="emi-input-subtitle">
+
+                    Minimum ₹1,00,000, maximum ₹1,00,00,000
+
+                  </p>
+
+                </div>
+
+
+                <div class="emi-value-box">
+
+                  <span class="emi-value-symbol">₹</span>
+
+                  <input type="number" id="emiLoanAmount" class="emi-value-input" value="450000" min="100000"
+                    max="10000000" step="10000">
+
+                </div>
+
+              </div>
+
+
+              <input type="range" id="emiLoanSlider" class="emi-slider" min="100000" max="10000000" step="10000"
+                value="450000">
+
+            </div>
+
+
+
+            <!-- INTEREST RATE -->
+
+            <div class="emi-input-card">
+
+              <div class="emi-input-header">
+
+                <div>
+
+                  <div class="emi-input-title">
+
+                    Annual interest rate
+
+                  </div>
+
+                  <p class="emi-input-subtitle">
+
+                    Minimum 5%, maximum 25%
+
+                  </p>
+
+                </div>
+
+
+                <div class="emi-value-box">
+
+                  <input type="number" id="emiRate" class="emi-value-input" value="10.5" min="5" max="25" step="0.1"
+                    style="text-align:right; padding-left:15px;">
+
+                  <span class="emi-value-symbol">
+
+                    %
+
+                  </span>
+
+                </div>
+
+              </div>
+
+
+              <input type="range" id="emiRateSlider" class="emi-slider" min="5" max="25" step="0.1" value="10.5">
+
+            </div>
+
+
+
+            <!-- TENURE -->
+
+            <div class="emi-input-card">
+
+              <div class="emi-input-header">
+
+                <div>
+
+                  <div class="emi-input-title">
+
+                    Loan tenure in months
+
+                  </div>
+
+                  <p class="emi-input-subtitle">
+
+                    Minimum 12 Mo, maximum 360 Mo
+
+                  </p>
+
+                </div>
+
+
+                <div class="emi-value-box">
+
+                  <input type="number" id="emiTenure" class="emi-value-input" value="60" min="12" max="360" step="1"
+                    style="text-align:right; padding-left:15px;">
+
+                  <span class="emi-value-symbol">
+
+                    Mo
+
+                  </span>
+
+                </div>
+
+              </div>
+
+
+              <input type="range" id="emiTenureSlider" class="emi-slider" min="12" max="360" step="1" value="60">
+
+            </div>
 
           </div>
 
 
 
-          <div class="col-md-4">
+          <!-- =================================================
+               RIGHT SIDE RESULT
+          ================================================== -->
 
-            <label>
+          <div class="col-lg-6">
 
-              Interest Rate (%)
-
-            </label>
-
-
-            <input type="number" id="interestRate" value="12" step="0.1" class="form-control">
-
-          </div>
+            <div class="emi-result-card">
 
 
+              <!-- CHART -->
 
-          <div class="col-md-4">
+              <div class="emi-chart-wrap">
 
-            <label>
+                <div class="emi-chart" id="emiChart" style="--principal-angle: 278deg;">
 
-              Tenure (Years)
-
-            </label>
-
-
-            <input type="number" id="loanYears" value="5" class="form-control">
-
-          </div>
+                </div>
 
 
+                <div class="emi-chart-center">
 
-          <div class="col-12">
+                  <span>
 
-            <button onclick="calculateEMI()" class="btn btn-primary">
+                    Monthly EMI
 
-              Calculate EMI
+                  </span>
 
-            </button>
+                  <strong id="modernEmiValue">
 
-          </div>
+                    ₹9,672
 
+                  </strong>
 
-        </div>
+                </div>
+
+              </div>
 
 
 
-        <div id="emiResult" class="emi-result">
+              <!-- STATS -->
+
+              <div class="emi-stat-row">
 
 
-          <div>
+                <div class="emi-stat">
 
-            <span>
+                  <span>
 
-              Monthly EMI
+                    Principal
 
-            </span>
+                  </span>
 
+                  <strong id="modernPrincipal">
 
-            <h3 id="emiValue">
+                    ₹4,50,000
 
-              ₹0
+                  </strong>
 
-            </h3>
-
-          </div>
-
+                </div>
 
 
-          <div>
+                <div class="emi-stat">
 
-            <span>
+                  <span>
 
-              Total Interest
+                    Total Interest
 
-            </span>
+                  </span>
 
+                  <strong id="modernInterest">
 
-            <h3 id="interestValue">
+                    ₹1,30,335
 
-              ₹0
+                  </strong>
 
-            </h3>
-
-          </div>
-
+                </div>
 
 
-          <div>
+                <div class="emi-stat">
 
-            <span>
+                  <span>
 
-              Total Repayment
+                    Total Payment
 
-            </span>
+                  </span>
+
+                  <strong id="modernTotal">
+
+                    ₹5,80,335
+
+                  </strong>
+
+                </div>
+
+              </div>
 
 
-            <h3 id="totalValue">
 
-              ₹0
+              <p class="emi-note">
 
-            </h3>
+                This calculator is indicative. Final figures depend
+                on lender-approved amount, rate, tenure, fees and
+                repayment terms.
+
+              </p>
+
+
+              <a href="#apply" class="btn btn-primary emi-apply-btn">
+
+                Apply for Loan
+
+                <i class="fa-solid fa-arrow-right ms-2"></i>
+
+              </a>
+
+            </div>
 
           </div>
 
@@ -1207,24 +1558,13 @@
 
     <div class="container">
 
-
       <div class="section-title">
 
-        <span>
+        <span>ELIGIBILITY</span>
 
-          ELIGIBILITY
-
-        </span>
-
-
-        <h2>
-
-          Common Eligibility Factors
-
-        </h2>
+        <h2>Common Eligibility Factors</h2>
 
       </div>
-
 
 
       <div class="row g-4">
@@ -1236,13 +1576,7 @@
 
             <i class="fa-solid fa-user-check"></i>
 
-
-            <h3>
-
-              Age
-
-            </h3>
-
+            <h3>Age</h3>
 
             <p>
 
@@ -1256,20 +1590,13 @@
         </div>
 
 
-
         <div class="col-md-3">
 
           <div class="info-card">
 
             <i class="fa-solid fa-wallet"></i>
 
-
-            <h3>
-
-              Income
-
-            </h3>
-
+            <h3>Income</h3>
 
             <p>
 
@@ -1283,20 +1610,13 @@
         </div>
 
 
-
         <div class="col-md-3">
 
           <div class="info-card">
 
             <i class="fa-solid fa-credit-card"></i>
 
-
-            <h3>
-
-              Credit Profile
-
-            </h3>
-
+            <h3>Credit Profile</h3>
 
             <p>
 
@@ -1310,20 +1630,13 @@
         </div>
 
 
-
         <div class="col-md-3">
 
           <div class="info-card">
 
             <i class="fa-solid fa-file-lines"></i>
 
-
-            <h3>
-
-              Documents
-
-            </h3>
-
+            <h3>Documents</h3>
 
             <p>
 
@@ -1335,7 +1648,6 @@
           </div>
 
         </div>
-
 
       </div>
 
@@ -1353,24 +1665,13 @@
 
     <div class="container">
 
-
       <div class="section-title">
 
-        <span>
+        <span>DOCUMENTS</span>
 
-          DOCUMENTS
-
-        </span>
-
-
-        <h2>
-
-          Documents You May Need
-
-        </h2>
+        <h2>Documents You May Need</h2>
 
       </div>
-
 
 
       <div class="row g-4">
@@ -1382,13 +1683,7 @@
 
             <i class="fa-solid fa-id-card"></i>
 
-
-            <h3>
-
-              Identity Proof
-
-            </h3>
-
+            <h3>Identity Proof</h3>
 
             <p>
 
@@ -1402,20 +1697,13 @@
         </div>
 
 
-
         <div class="col-md-4">
 
           <div class="document-card">
 
             <i class="fa-solid fa-house"></i>
 
-
-            <h3>
-
-              Address Proof
-
-            </h3>
-
+            <h3>Address Proof</h3>
 
             <p>
 
@@ -1429,20 +1717,13 @@
         </div>
 
 
-
         <div class="col-md-4">
 
           <div class="document-card">
 
             <i class="fa-solid fa-file-invoice"></i>
 
-
-            <h3>
-
-              Income Proof
-
-            </h3>
-
+            <h3>Income Proof</h3>
 
             <p>
 
@@ -1472,32 +1753,17 @@
 
     <div class="container">
 
-
       <div class="row justify-content-center">
-
 
         <div class="col-lg-8">
 
-
           <div class="apply-card">
-
 
             <div class="section-title">
 
+              <span>APPLY NOW</span>
 
-              <span>
-
-                APPLY NOW
-
-              </span>
-
-
-              <h2>
-
-                Start Your Loan Enquiry
-
-              </h2>
-
+              <h2>Start Your Loan Enquiry</h2>
 
               <p>
 
@@ -1506,9 +1772,7 @@
 
               </p>
 
-
             </div>
-
 
 
             <form id="applyLoanForm" onsubmit="submitApplication(event)">
@@ -1519,27 +1783,16 @@
 
                 <div class="col-md-6">
 
-                  <label>
-
-                    Full Name
-
-                  </label>
-
+                  <label>Full Name</label>
 
                   <input type="text" name="name" class="form-control" placeholder="Enter full name" required>
 
                 </div>
 
 
-
                 <div class="col-md-6">
 
-                  <label>
-
-                    Mobile Number
-
-                  </label>
-
+                  <label>Mobile Number</label>
 
                   <input type="tel" name="mobile" class="form-control" placeholder="Enter 10 digit mobile number"
                     maxlength="10" inputmode="numeric" pattern="[0-9]{10}"
@@ -1548,30 +1801,18 @@
                 </div>
 
 
-
                 <div class="col-md-6">
 
-                  <label>
-
-                    Email
-
-                  </label>
-
+                  <label>Email</label>
 
                   <input type="email" name="email" class="form-control" placeholder="Enter email">
 
                 </div>
 
 
-
                 <div class="col-md-6">
 
-                  <label>
-
-                    Loan Type
-
-                  </label>
-
+                  <label>Loan Type</label>
 
                   <select name="loanType" class="form-select" required>
 
@@ -1610,16 +1851,9 @@
                     </option>
 
 
-                    <option value="Education Loan">
+                    <option value="Loan Against Property">
 
-                      Education Loan
-
-                    </option>
-
-
-                    <option value="Gold Loan">
-
-                      Gold Loan
+                      Loan Against Property
 
                     </option>
 
@@ -1628,51 +1862,32 @@
                 </div>
 
 
-
                 <div class="col-md-6">
 
-                  <label>
-
-                    Loan Amount
-
-                  </label>
-
+                  <label>Loan Amount</label>
 
                   <input type="number" name="amount" class="form-control" placeholder="₹ Enter amount">
 
                 </div>
 
 
-
                 <div class="col-md-6">
 
-                  <label>
-
-                    City
-
-                  </label>
-
+                  <label>City</label>
 
                   <input type="text" name="city" class="form-control" placeholder="Enter city">
 
                 </div>
 
 
-
                 <div class="col-12">
 
-                  <label>
-
-                    Message
-
-                  </label>
-
+                  <label>Message</label>
 
                   <textarea name="message" class="form-control" rows="4"
                     placeholder="Tell us about your requirement"></textarea>
 
                 </div>
-
 
 
                 <div class="col-12">
@@ -1684,7 +1899,9 @@
                   </button>
 
 
-                  <div id="applySuccess" class="form-success"></div>
+                  <div id="applySuccess" class="form-success">
+
+                  </div>
 
                 </div>
 
@@ -1713,24 +1930,13 @@
 
     <div class="container">
 
-
       <div class="section-title">
 
-        <span>
+        <span>CONTACT US</span>
 
-          CONTACT US
-
-        </span>
-
-
-        <h2>
-
-          Get In Touch
-
-        </h2>
+        <h2>Get In Touch</h2>
 
       </div>
-
 
 
       <div class="row g-4">
@@ -1742,28 +1948,25 @@
 
             <i class="fa-solid fa-phone"></i>
 
-
-            <h3>
-
-              Call Us
-
-            </h3>
-
+            <h3>Call Us</h3>
 
             <a href="tel:+917053005242">
-              <a href="tel:+918796366914">
 
-                +91 7053005242
-                <br>
-                +91 8796366914
+              +91 7053005242
 
-              </a>
+            </a>
+
+            <br>
+
+            <a href="tel:+918796366914">
+
+              +91 8796366914
+
             </a>
 
           </div>
 
         </div>
-
 
 
         <div class="col-md-4">
@@ -1772,13 +1975,7 @@
 
             <i class="fa-solid fa-envelope"></i>
 
-
-            <h3>
-
-              Email Us
-
-            </h3>
-
+            <h3>Email Us</h3>
 
             <a href="mailto:Easyloanpoint9@gmail.com">
 
@@ -1791,27 +1988,16 @@
         </div>
 
 
-
         <div class="col-md-4">
 
           <div class="contact-card">
+              <i class="fa-solid fa-location-dot"></i>
 
-            <i class="fa-solid fa-location-dot"></i>
+              <h3>Visit Us</h3>
+            <a href="https://www.google.com/maps/search/?api=1&query=New+Delhi+India" target="_blank">
 
-
-            <h3>
-
-              Visit Us
-
-            </h3>
-
-
-            <p>
-
-              New Delhi, India
-
-            </p>
-
+              <p>New Delhi, India</p>
+            </a>
           </div>
 
         </div>
@@ -1826,8 +2012,8 @@
 
 
   <!-- =====================================================
-     FOOTER
-====================================================== -->
+       FOOTER
+  ====================================================== -->
 
   <footer>
 
@@ -1835,23 +2021,30 @@
 
       <div class="row g-4">
 
+
         <!-- BRAND -->
+
         <div class="col-lg-4">
 
           <h3 class="footer-logo">
 
-            <img src="Loan img.png" alt="" height="50">
+            <img src="Loan img.png" alt="Easy Loan Point" height="50">
 
             Easy Loan Point
 
           </h3>
 
+
           <p>
+
             Simple, transparent and convenient loan
             assistance for your financial journey.
+
           </p>
 
+
           <div class="social-links">
+
 
             <a href="https://www.instagram.com/easy_loan_point_india" target="_blank" rel="noopener noreferrer"
               aria-label="Instagram">
@@ -1860,17 +2053,20 @@
 
             </a>
 
+
             <a href="#" aria-label="Facebook">
 
               <i class="fa-brands fa-facebook"></i>
 
             </a>
 
-            <a href="https://wa.me/917053005242" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+
+            <a href="https://wa.me/918796366914" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
 
               <i class="fa-brands fa-whatsapp"></i>
 
             </a>
+
 
             <a href="#" aria-label="LinkedIn">
 
@@ -1878,97 +2074,137 @@
 
             </a>
 
+
           </div>
 
         </div>
 
 
+
         <!-- QUICK LINKS -->
+
         <div class="col-lg-2">
 
-          <h4>
-            Quick Links
-          </h4>
+          <h4>Quick Links</h4>
+
 
           <a href="#home">
+
             <i class="fa-solid fa-angle-right"></i>
+
             <span>Home</span>
+
           </a>
+
 
           <a href="#about">
+
             <i class="fa-solid fa-angle-right"></i>
+
             <span>About</span>
+
           </a>
+
 
           <a href="#loans">
+
             <i class="fa-solid fa-angle-right"></i>
+
             <span>Loans</span>
+
           </a>
+
 
           <a href="#emi">
+
             <i class="fa-solid fa-angle-right"></i>
+
             <span>EMI Calculator</span>
+
           </a>
+
 
           <a href="#eligibility">
+
             <i class="fa-solid fa-angle-right"></i>
+
             <span>Eligibility</span>
+
           </a>
 
+
           <a href="#contact">
+
             <i class="fa-solid fa-angle-right"></i>
+
             <span>Contact</span>
+
           </a>
 
         </div>
+
 
 
         <!-- LOAN PRODUCTS -->
+
         <div class="col-lg-3">
 
-          <h4>
-            Loan Products
-          </h4>
+          <h4>Loan Products</h4>
+
 
           <a href="#loans">
+
             <i class="fa-solid fa-angle-right"></i>
+
             <span>Personal Loan</span>
+
           </a>
 
+
           <a href="#loans">
+
             <i class="fa-solid fa-angle-right"></i>
+
             <span>Home Loan</span>
+
           </a>
 
+
           <a href="#loans">
+
             <i class="fa-solid fa-angle-right"></i>
+
             <span>Business Loan</span>
+
           </a>
 
+
           <a href="#loans">
+
             <i class="fa-solid fa-angle-right"></i>
+
             <span>Vehicle Loan</span>
+
           </a>
 
-          <a href="#loans">
-            <i class="fa-solid fa-angle-right"></i>
-            <span>Education Loan</span>
-          </a>
 
           <a href="#loans">
+
             <i class="fa-solid fa-angle-right"></i>
-            <span>Gold Loan</span>
+
+            <span>Loan Against Property</span>
+
           </a>
 
         </div>
 
 
+
         <!-- CONTACT -->
+
         <div class="col-lg-3">
 
-          <h4>
-            Contact
-          </h4>
+          <h4>Contact</h4>
 
 
           <p>
@@ -1980,7 +2216,6 @@
               +91 7053005242
 
             </a>
-
             <a href="tel:+918796366914">
 
               <i class="fa-solid fa-phone"></i>
@@ -1988,30 +2223,19 @@
               +91 8796366914
 
             </a>
-
-          </p>
-
-
-          <p>
-
             <a href="mailto:Easyloanpoint9@gmail.com">
 
               <i class="fa-solid fa-envelope"></i>
 
               Easyloanpoint9@gmail.com
+              <a href="https://www.google.com/maps/search/?api=1&query=New+Delhi+India" target="_blank">
+                <i class="fa-solid fa-location-dot"></i>
 
+                New Delhi, India
+              </a>
             </a>
-
           </p>
 
-
-          <p>
-
-            <i class="fa-solid fa-location-dot"></i>
-
-            New Delhi, India
-
-          </p>
 
         </div>
 
@@ -2032,6 +2256,34 @@
 
   </footer>
 
+
+
+  <!-- =====================================================
+       FLOATING WHATSAPP
+  ====================================================== -->
+
+  <a href="https://wa.me/917053005242" target="_blank" rel="noopener noreferrer" id="floating-whatsapp"
+    aria-label="Chat on WhatsApp">
+
+    <i class="fa-brands fa-whatsapp"></i>
+
+  </a>
+
+
+
+  <!-- =====================================================
+       FLOATING INSTAGRAM
+  ====================================================== -->
+
+  <a href="https://www.instagram.com/easy_loan_point_india" target="_blank" rel="noopener noreferrer"
+    id="floating-instagram" aria-label="Follow us on Instagram">
+
+    <i class="fa-brands fa-instagram"></i>
+
+  </a>
+
+
+
   <!-- Bootstrap JS -->
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -2046,50 +2298,111 @@
 
 
     /* =====================================================
-       EMI CALCULATOR
+       FORMAT RUPEES
     ====================================================== */
 
-    function calculateEMI() {
+    function formatRupees(number) {
+
+      return "₹" + Math.round(number).toLocaleString("en-IN");
+
+    }
+
+
+
+    /* =====================================================
+       MODERN EMI CALCULATOR
+    ====================================================== */
+
+    function calculateModernEMI() {
+
 
       let principal =
         parseFloat(
-          document.getElementById("loanAmount").value
+          document.getElementById("emiLoanAmount").value
         );
 
 
       let annualRate =
         parseFloat(
-          document.getElementById("interestRate").value
+          document.getElementById("emiRate").value
         );
 
 
-      let years =
-        parseFloat(
-          document.getElementById("loanYears").value
+      let months =
+        parseInt(
+          document.getElementById("emiTenure").value
         );
 
 
-      if (
-        !principal ||
-        annualRate < 0 ||
-        !years
-      ) {
+      if (principal < 100000) {
 
-        alert(
-          "Please enter valid loan details."
-        );
-
-        return;
+        principal = 100000;
 
       }
 
 
+      if (principal > 10000000) {
+
+        principal = 10000000;
+
+      }
+
+
+      if (annualRate < 5) {
+
+        annualRate = 5;
+
+      }
+
+
+      if (annualRate > 25) {
+
+        annualRate = 25;
+
+      }
+
+
+      if (months < 12) {
+
+        months = 12;
+
+      }
+
+
+      if (months > 360) {
+
+        months = 360;
+
+      }
+
+
+      document.getElementById("emiLoanAmount").value =
+        principal;
+
+
+      document.getElementById("emiRate").value =
+        annualRate;
+
+
+      document.getElementById("emiTenure").value =
+        months;
+
+
+      document.getElementById("emiLoanSlider").value =
+        principal;
+
+
+      document.getElementById("emiRateSlider").value =
+        annualRate;
+
+
+      document.getElementById("emiTenureSlider").value =
+        months;
+
+
+
       let monthlyRate =
         annualRate / 12 / 100;
-
-
-      let months =
-        years * 12;
 
 
       let emi;
@@ -2097,8 +2410,7 @@
 
       if (monthlyRate === 0) {
 
-        emi =
-          principal / months;
+        emi = principal / months;
 
       }
 
@@ -2121,50 +2433,120 @@
       }
 
 
-      let total =
+      let totalPayment =
         emi * months;
 
 
-      let interest =
-        total - principal;
+      let totalInterest =
+        totalPayment - principal;
 
 
-      document.getElementById(
-        "emiValue"
-      ).innerText =
-        "₹" +
-        emi.toLocaleString(
-          "en-IN",
-          {
-            maximumFractionDigits: 0
-          }
-        );
+
+      /* =================================================
+         UPDATE VALUES
+      ================================================== */
+
+      document.getElementById("modernEmiValue").innerText =
+        formatRupees(emi);
 
 
-      document.getElementById(
-        "interestValue"
-      ).innerText =
-        "₹" +
-        interest.toLocaleString(
-          "en-IN",
-          {
-            maximumFractionDigits: 0
-          }
-        );
+      document.getElementById("modernPrincipal").innerText =
+        formatRupees(principal);
 
 
-      document.getElementById(
-        "totalValue"
-      ).innerText =
-        "₹" +
-        total.toLocaleString(
-          "en-IN",
-          {
-            maximumFractionDigits: 0
-          }
+      document.getElementById("modernInterest").innerText =
+        formatRupees(totalInterest);
+
+
+      document.getElementById("modernTotal").innerText =
+        formatRupees(totalPayment);
+
+
+
+      /* =================================================
+         UPDATE DONUT CHART
+      ================================================== */
+
+      let principalAngle =
+        (principal / totalPayment) * 360;
+
+
+      document.getElementById("emiChart").style
+        .setProperty(
+          "--principal-angle",
+          principalAngle + "deg"
         );
 
     }
+
+
+
+    /* =====================================================
+       SLIDER EVENTS
+    ====================================================== */
+
+    document
+      .getElementById("emiLoanSlider")
+      .addEventListener("input", function () {
+
+        document.getElementById("emiLoanAmount").value =
+          this.value;
+
+        calculateModernEMI();
+
+      });
+
+
+
+    document
+      .getElementById("emiRateSlider")
+      .addEventListener("input", function () {
+
+        document.getElementById("emiRate").value =
+          this.value;
+
+        calculateModernEMI();
+
+      });
+
+
+
+    document
+      .getElementById("emiTenureSlider")
+      .addEventListener("input", function () {
+
+        document.getElementById("emiTenure").value =
+          this.value;
+
+        calculateModernEMI();
+
+      });
+
+
+
+    /* =====================================================
+       INPUT EVENTS
+    ====================================================== */
+
+    document
+      .getElementById("emiLoanAmount")
+      .addEventListener("input", calculateModernEMI);
+
+
+    document
+      .getElementById("emiRate")
+      .addEventListener("input", calculateModernEMI);
+
+
+    document
+      .getElementById("emiTenure")
+      .addEventListener("input", calculateModernEMI);
+
+
+
+    /* INITIAL CALCULATION */
+
+    calculateModernEMI();
 
 
 
@@ -2204,6 +2586,7 @@
 
 
       submitButton.disabled = true;
+
 
       submitButton.innerText =
         "Submitting...";
@@ -2400,40 +2783,39 @@
     }
 
 
-  </script>
 
-  <script>
-    document.querySelectorAll(".btn-primary").forEach(function (button) {
+    /* =====================================================
+       BUTTON SHINE EFFECT
+    ====================================================== */
 
-      button.addEventListener("click", function () {
+    document
+      .querySelectorAll(".btn-primary")
+      .forEach(function (button) {
 
-        button.classList.remove("shine-click");
+        button.addEventListener(
+          "click",
+          function () {
 
-        void button.offsetWidth;
+            button.classList.remove(
+              "shine-click"
+            );
 
-        button.classList.add("shine-click");
+
+            void button.offsetWidth;
+
+
+            button.classList.add(
+              "shine-click"
+            );
+
+          }
+        );
 
       });
 
-    });
   </script>
+
+
 </body>
-
-<!-- FLOATING WHATSAPP -->
-<a href="https://wa.me/+917053005242" target="_blank" rel="noopener noreferrer" id="floating-whatsapp"
-  aria-label="Chat on WhatsApp">
-
-  <i class="fa-brands fa-whatsapp"></i>
-
-</a>
-
-
-<!-- FLOATING INSTAGRAM -->
-<a href="https://www.instagram.com/easy_loan_point_india" target="_blank" rel="noopener noreferrer"
-  id="floating-instagram" aria-label="Follow us on Instagram">
-
-  <i class="fa-brands fa-instagram"></i>
-
-</a>
 
 </html>
