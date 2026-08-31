@@ -2060,3 +2060,72 @@ footer .col-lg-3 p > i {
     }
 
 }
+/* =========================================
+   FOOTER CONTACT FINAL RESPONSIVE FIX
+========================================= */
+
+.footer-contact .contact-item {
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+.footer-contact .contact-item a {
+    display: flex !important;
+    align-items: center;
+    gap: 9px;
+    width: 100%;
+    text-decoration: none;
+}
+
+.footer-contact .contact-item i {
+    width: 18px;
+    min-width: 18px;
+    text-align: center;
+}
+
+.footer-contact .contact-item span {
+    display: block;
+}
+
+
+/* MOBILE */
+@media (max-width: 767px) {
+
+    footer {
+        overflow: hidden;
+    }
+
+    .footer-contact {
+        width: 100%;
+    }
+
+    .footer-contact h4 {
+        margin-bottom: 20px;
+    }
+
+    .footer-contact .contact-item {
+        display: block;
+        width: 100%;
+        margin-bottom: 14px;
+    }
+
+    .footer-contact .contact-item a {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        width: 100% !important;
+        gap: 9px;
+        white-space: normal;
+    }
+
+    .footer-contact .contact-item i {
+        flex: 0 0 18px;
+    }
+
+    .footer-contact .contact-item span {
+        flex: 1;
+        min-width: 0;
+        word-break: break-word;
+    }
+
+}
