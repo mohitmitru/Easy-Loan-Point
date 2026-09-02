@@ -86,7 +86,10 @@ section[id] {
 
     z-index: 99999 !important;
 
-    background: rgba(10, 25, 47, 0.94) !important;
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
 
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -155,103 +158,198 @@ section[id] {
 }
 
 
-/* =========================================================
-   NAVBAR DROPDOWN
-========================================================= */
+/* =========================================
+   NAVBAR
+========================================= */
 
-.custom-navbar .dropdown-menu {
-    background: #ffffff;
-
-    border: none;
-    border-radius: 10px;
-
-    padding: 8px;
-
-    margin-top: 8px;
-
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+.custom-navbar {
+    background: rgba(0, 0, 0, 0.35) !important;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-.custom-navbar .dropdown-item {
-    color: #172b4d;
 
-    font-weight: 500;
+/* =========================================
+   DROPDOWN - DESKTOP + MOBILE
+========================================= */
+
+.custom-navbar .dropdown-menu {
+    background: rgba(5, 20, 40, 0.75) !important;
+    backdrop-filter: blur(15px) !important;
+    -webkit-backdrop-filter: blur(15px) !important;
+
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    border-radius: 10px;
+
+    padding: 8px !important;
+    margin-top: 8px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.30);
+
+    overflow: hidden;
+}
+
+
+/* Dropdown items */
+
+.custom-navbar .dropdown-menu .dropdown-item {
+    background: transparent !important;
+    color: #ffffff !important;
 
     padding: 10px 14px;
 
+    border: none !important;
     border-radius: 7px;
 
-    transition: all 0.2s ease;
-}
+    font-weight: 500;
 
-.custom-navbar .dropdown-item:hover,
-.custom-navbar .dropdown-item:focus {
-    background: #f1f5f9;
-    color: #0d6efd;
+    transition: 0.2s ease;
 }
 
 
-/* =========================================================
-   NAVBAR APPLY BUTTON
-========================================================= */
+/* Hover */
 
-.custom-navbar .apply-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 10px 20px !important;
-
-    border-radius: 8px !important;
-
-    color: #ffffff !important;
-
-    background: linear-gradient(
-        135deg,
-        #005bea,
-        #0d6efd,
-        #00b4ff
-    ) !important;
-
-    border: none !important;
-
-    font-weight: 700;
-
-    box-shadow: 0 6px 18px rgba(13, 110, 253, 0.30);
-
-    transition: all 0.3s ease;
-}
-
-.custom-navbar .apply-btn:hover {
-    color: #ffffff !important;
-
-    transform: translateY(-2px);
-
-    box-shadow: 0 12px 28px rgba(13, 110, 253, 0.40);
+.custom-navbar .dropdown-menu .dropdown-item:hover,
+.custom-navbar .dropdown-menu .dropdown-item:focus {
+    background: rgba(255, 255, 255, 0.10) !important;
+    color: #0d6efd !important;
 }
 
 
-/* =========================================================
-   NAVBAR MOBILE BUTTON
-========================================================= */
+/* =========================================
+   MOBILE NAVBAR
+========================================= */
 
-.custom-navbar .navbar-toggler {
-    border: 1px solid rgba(255, 255, 255, 0.45);
+@media (max-width: 991px) {
 
-    padding: 7px 10px;
+    .custom-navbar {
+        background: rgba(5, 20, 40, 0.80) !important;
 
-    box-shadow: none !important;
+        backdrop-filter: blur(18px) !important;
+        -webkit-backdrop-filter: blur(18px) !important;
+
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+
+    /* Mobile opened menu */
+
+    .custom-navbar .navbar-collapse {
+        background: rgba(5, 20, 40, 0.80) !important;
+
+        backdrop-filter: blur(18px) !important;
+        -webkit-backdrop-filter: blur(18px) !important;
+
+        border: 1px solid rgba(255, 255, 255, 0.10);
+
+        border-radius: 12px;
+
+        padding: 10px;
+
+        margin-top: 8px;
+    }
+
+
+    /* Normal mobile links */
+
+    .custom-navbar .navbar-nav .nav-link {
+        color: #ffffff !important;
+
+        padding: 12px 10px;
+
+        border-radius: 7px;
+
+        font-weight: 500;
+    }
+
+
+    .custom-navbar .navbar-nav .nav-link:hover,
+    .custom-navbar .navbar-nav .nav-link:focus {
+        background: rgba(255, 255, 255, 0.08) !important;
+    }
+
+
+    /* Active */
+
+    .custom-navbar .navbar-nav .nav-link.active {
+        color: #ffc107 !important;
+    }
+
+
+    /* =====================================
+       MOBILE LOANS DROPDOWN
+    ===================================== */
+
+    .custom-navbar .dropdown-menu {
+        position: static !important;
+
+        width: 100% !important;
+
+        margin: 3px 0 8px 0 !important;
+
+        padding: 6px !important;
+
+        background: rgba(5, 20, 40, 0.90) !important;
+
+        backdrop-filter: blur(18px) !important;
+        -webkit-backdrop-filter: blur(18px) !important;
+
+        border: 1px solid rgba(255, 255, 255, 0.12) !important;
+
+        border-radius: 10px;
+
+        box-shadow: none;
+
+        overflow: hidden;
+    }
+
+
+    /* Mobile dropdown items */
+
+    .custom-navbar .dropdown-menu .dropdown-item {
+
+        width: 100% !important;
+
+        background: transparent !important;
+
+        color: #ffffff !important;
+
+        padding: 11px 12px;
+
+        border-radius: 7px;
+
+        font-size: 14px;
+    }
+
+
+    .custom-navbar .dropdown-menu .dropdown-item:hover,
+    .custom-navbar .dropdown-menu .dropdown-item:focus {
+        background: rgba(255, 255, 255, 0.10) !important;
+
+        color: #ffc107 !important;
+    }
+
+
+    /* Apply button */
+
+    .custom-navbar .apply-btn {
+        width: 100%;
+        margin-top: 8px;
+    }
+
+
+    /* Mobile toggle */
+
+    .custom-navbar .navbar-toggler {
+        border: 1px solid rgba(255, 255, 255, 0.20);
+
+        background: rgba(255, 255, 255, 0.08);
+
+        border-radius: 8px;
+    }
+
 }
-
-.custom-navbar .navbar-toggler:focus {
-    box-shadow: none !important;
-}
-
-.custom-navbar .navbar-toggler-icon {
-    filter: brightness(0) invert(1);
-}
-
-
 /* =========================================================
    HERO
 ========================================================= */
@@ -265,11 +363,9 @@ section[id] {
     padding-top: 90px;
 
     background:
-        linear-gradient(
-            90deg,
+        linear-gradient(90deg,
             rgba(3, 25, 54, 0.96),
-            rgba(3, 47, 98, 0.82)
-        ),
+            rgba(3, 47, 98, 0.82)),
         url("https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1800&q=80");
 
     background-size: cover;
@@ -355,12 +451,10 @@ section[id] {
 
     border-radius: 9px !important;
 
-    background: linear-gradient(
-        135deg,
-        #005bea,
-        #0d6efd,
-        #00b4ff
-    ) !important;
+    background: linear-gradient(135deg,
+            #005bea,
+            #0d6efd,
+            #00b4ff) !important;
 
     color: #ffffff !important;
 
@@ -418,12 +512,10 @@ section[id] {
     width: 55%;
     height: 100%;
 
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255, 255, 255, 0.7),
-        transparent
-    );
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.7),
+            transparent);
 
     transform: skewX(-25deg);
 
@@ -722,11 +814,9 @@ section[id] {
 ========================================================= */
 
 .emi-modern-section {
-    background: linear-gradient(
-        135deg,
-        #f8fbff,
-        #eef8fc
-    );
+    background: linear-gradient(135deg,
+            #f8fbff,
+            #eef8fc);
 
     padding: 80px 0;
 }
@@ -945,12 +1035,10 @@ section[id] {
 
     border-radius: 50%;
 
-    background: conic-gradient(
-        #123676 0deg,
-        #123676 var(--principal-angle),
-        #d9a038 var(--principal-angle),
-        #d9a038 360deg
-    );
+    background: conic-gradient(#123676 0deg,
+            #123676 var(--principal-angle),
+            #d9a038 var(--principal-angle),
+            #d9a038 360deg);
 
     display: flex;
 
@@ -1138,11 +1226,9 @@ section[id] {
     padding: 90px 0;
 
     background:
-        linear-gradient(
-            90deg,
+        linear-gradient(90deg,
             rgba(8, 45, 92, 0.96),
-            rgba(13, 110, 253, 0.85)
-        );
+            rgba(13, 110, 253, 0.85));
 }
 
 .apply-card {
@@ -1197,7 +1283,7 @@ section[id] {
     text-align: center;
 }
 
-.contact-card > i {
+.contact-card>i {
     font-size: 35px;
 
     color: #0d6efd;
@@ -1305,8 +1391,8 @@ footer hr {
     transform: translateY(-3px);
 }
 
-footer .col-lg-2 > a,
-footer .col-lg-3 > a {
+footer .col-lg-2>a,
+footer .col-lg-3>a {
     display: flex;
 
     align-items: center;
@@ -1318,8 +1404,8 @@ footer .col-lg-3 > a {
     transition: all 0.3s ease;
 }
 
-footer .col-lg-2 > a i,
-footer .col-lg-3 > a i {
+footer .col-lg-2>a i,
+footer .col-lg-3>a i {
     color: #0d6efd;
 
     font-size: 11px;
@@ -1327,8 +1413,8 @@ footer .col-lg-3 > a i {
     width: 12px;
 }
 
-footer .col-lg-2 > a:hover,
-footer .col-lg-3 > a:hover {
+footer .col-lg-2>a:hover,
+footer .col-lg-3>a:hover {
     padding-left: 5px;
 }
 
@@ -1343,7 +1429,7 @@ footer .col-lg-3 p a {
 }
 
 footer .col-lg-3 p a i,
-footer .col-lg-3 p > i {
+footer .col-lg-3 p>i {
     color: #0d6efd;
 }
 
@@ -1395,14 +1481,12 @@ footer .col-lg-3 p > i {
 #floating-instagram {
     bottom: 92px !important;
 
-    background: linear-gradient(
-        45deg,
-        #feda75,
-        #fa7e1e,
-        #d62976,
-        #962fbf,
-        #4f5bd5
-    ) !important;
+    background: linear-gradient(45deg,
+            #feda75,
+            #fa7e1e,
+            #d62976,
+            #962fbf,
+            #4f5bd5) !important;
 }
 
 #floating-whatsapp:hover,
@@ -1966,6 +2050,7 @@ footer .col-lg-3 p > i {
         bottom: 68px !important;
     }
 }
+
 /* =========================================
    MOBILE FOOTER FIX
 ========================================= */
@@ -2060,6 +2145,7 @@ footer .col-lg-3 p > i {
     }
 
 }
+
 /* =========================================
    FOOTER CONTACT FINAL RESPONSIVE FIX
 ========================================= */
@@ -2126,6 +2212,120 @@ footer .col-lg-3 p > i {
         flex: 1;
         min-width: 0;
         word-break: break-word;
+    }
+
+}
+/* =========================================================
+   HERO BUTTONS
+========================================================= */
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+
+/* APPLY FOR LOAN */
+
+.hero-buttons .btn-primary {
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   CALCULATE EMI BUTTON - GLASS EFFECT
+========================================================= */
+
+.hero-buttons .calculate-emi-btn {
+
+    background: rgba(255, 255, 255, 0.08);
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255, 255, 255, 0.70);
+
+    color: #ffffff;
+
+    border-radius: 8px;
+
+    padding: 12px 18px;
+
+    font-weight: 500;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.12);
+
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* HOVER */
+
+.hero-buttons .calculate-emi-btn:hover {
+
+    background: rgba(255, 255, 255, 0.16);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border-color: rgba(255, 255, 255, 0.95);
+
+    color: #ffffff;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.20);
+}
+
+
+/* CLICK */
+
+.hero-buttons .calculate-emi-btn:active {
+
+    transform: translateY(0);
+
+    background: rgba(255, 255, 255, 0.12);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 576px) {
+
+    .hero-buttons {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        width: 100%;
+
+    }
+
+    .hero-buttons .btn {
+
+        width: 100%;
+
+        text-align: center;
+
+    }
+
+    .hero-buttons .calculate-emi-btn {
+
+        padding: 12px 18px;
+
     }
 
 }
